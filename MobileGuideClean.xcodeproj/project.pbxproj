@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE245492233A01CC00E84170 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE245491233A01CC00E84170 /* AppDelegate.swift */; };
+		AE245494233A01CC00E84170 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE245493233A01CC00E84170 /* SceneDelegate.swift */; };
+		AE245496233A01CC00E84170 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE245495233A01CC00E84170 /* ViewController.swift */; };
+		AE245499233A01CC00E84170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE245497233A01CC00E84170 /* Main.storyboard */; };
+		AE24549B233A01CD00E84170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE24549A233A01CD00E84170 /* Assets.xcassets */; };
+		AE24549E233A01CD00E84170 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE24549C233A01CD00E84170 /* LaunchScreen.storyboard */; };
+		AE2454AA233A03E400E84170 /* MobileListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */; };
+		AE2454C7233A05A400E84170 /* MobileListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454BF233A05A400E84170 /* MobileListPresenter.swift */; };
+		AE2454C8233A05A400E84170 /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C0233A05A400E84170 /* MobileListInteractor.swift */; };
+		AE2454C9233A05A400E84170 /* MobileListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C1233A05A400E84170 /* MobileListModels.swift */; };
+		AE2454CA233A05A400E84170 /* MobileListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C2233A05A400E84170 /* MobileListStore.swift */; };
+		AE2454CB233A05A400E84170 /* MobileListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C3233A05A400E84170 /* MobileListWorker.swift */; };
+		AE2454CC233A05A400E84170 /* MobileListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C4233A05A400E84170 /* MobileListRouter.swift */; };
+		AE2454CD233A05A400E84170 /* MobileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C5233A05A400E84170 /* MobileListViewController.swift */; };
+		AE2454CE233A05A400E84170 /* MobileListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C6233A05A400E84170 /* MobileListEntity.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE24548E233A01CC00E84170 /* MobileGuideClean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileGuideClean.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE245491233A01CC00E84170 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE245493233A01CC00E84170 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AE245495233A01CC00E84170 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE245498233A01CC00E84170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE24549A233A01CD00E84170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE24549D233A01CD00E84170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE24549F233A01CD00E84170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListTableViewCell.swift; sourceTree = "<group>"; };
+		AE2454BF233A05A400E84170 /* MobileListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListPresenter.swift; sourceTree = "<group>"; };
+		AE2454C0233A05A400E84170 /* MobileListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListInteractor.swift; sourceTree = "<group>"; };
+		AE2454C1233A05A400E84170 /* MobileListModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListModels.swift; sourceTree = "<group>"; };
+		AE2454C2233A05A400E84170 /* MobileListStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListStore.swift; sourceTree = "<group>"; };
+		AE2454C3233A05A400E84170 /* MobileListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListWorker.swift; sourceTree = "<group>"; };
+		AE2454C4233A05A400E84170 /* MobileListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListRouter.swift; sourceTree = "<group>"; };
+		AE2454C5233A05A400E84170 /* MobileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListViewController.swift; sourceTree = "<group>"; };
+		AE2454C6233A05A400E84170 /* MobileListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListEntity.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE24548B233A01CC00E84170 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE245485233A01CC00E84170 = {
+			isa = PBXGroup;
+			children = (
+				AE245490233A01CC00E84170 /* MobileGuideClean */,
+				AE24548F233A01CC00E84170 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE24548F233A01CC00E84170 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE24548E233A01CC00E84170 /* MobileGuideClean.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE245490233A01CC00E84170 /* MobileGuideClean */ = {
+			isa = PBXGroup;
+			children = (
+				AE2454BE233A05A400E84170 /* MobileListScene */,
+				AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */,
+				AE245491233A01CC00E84170 /* AppDelegate.swift */,
+				AE245493233A01CC00E84170 /* SceneDelegate.swift */,
+				AE245495233A01CC00E84170 /* ViewController.swift */,
+				AE245497233A01CC00E84170 /* Main.storyboard */,
+				AE24549A233A01CD00E84170 /* Assets.xcassets */,
+				AE24549C233A01CD00E84170 /* LaunchScreen.storyboard */,
+				AE24549F233A01CD00E84170 /* Info.plist */,
+			);
+			path = MobileGuideClean;
+			sourceTree = "<group>";
+		};
+		AE2454BE233A05A400E84170 /* MobileListScene */ = {
+			isa = PBXGroup;
+			children = (
+				AE2454BF233A05A400E84170 /* MobileListPresenter.swift */,
+				AE2454C0233A05A400E84170 /* MobileListInteractor.swift */,
+				AE2454C1233A05A400E84170 /* MobileListModels.swift */,
+				AE2454C2233A05A400E84170 /* MobileListStore.swift */,
+				AE2454C3233A05A400E84170 /* MobileListWorker.swift */,
+				AE2454C4233A05A400E84170 /* MobileListRouter.swift */,
+				AE2454C5233A05A400E84170 /* MobileListViewController.swift */,
+				AE2454C6233A05A400E84170 /* MobileListEntity.swift */,
+			);
+			path = MobileListScene;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE24548D233A01CC00E84170 /* MobileGuideClean */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE2454A2233A01CD00E84170 /* Build configuration list for PBXNativeTarget "MobileGuideClean" */;
+			buildPhases = (
+				AE24548A233A01CC00E84170 /* Sources */,
+				AE24548B233A01CC00E84170 /* Frameworks */,
+				AE24548C233A01CC00E84170 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobileGuideClean;
+			productName = MobileGuideClean;
+			productReference = AE24548E233A01CC00E84170 /* MobileGuideClean.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE245486233A01CC00E84170 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = Jiratip;
+				TargetAttributes = {
+					AE24548D233A01CC00E84170 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = AE245489233A01CC00E84170 /* Build configuration list for PBXProject "MobileGuideClean" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE245485233A01CC00E84170;
+			productRefGroup = AE24548F233A01CC00E84170 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE24548D233A01CC00E84170 /* MobileGuideClean */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE24548C233A01CC00E84170 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE24549E233A01CD00E84170 /* LaunchScreen.storyboard in Resources */,
+				AE24549B233A01CD00E84170 /* Assets.xcassets in Resources */,
+				AE245499233A01CC00E84170 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE24548A233A01CC00E84170 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE245496233A01CC00E84170 /* ViewController.swift in Sources */,
+				AE2454CA233A05A400E84170 /* MobileListStore.swift in Sources */,
+				AE2454CC233A05A400E84170 /* MobileListRouter.swift in Sources */,
+				AE2454CB233A05A400E84170 /* MobileListWorker.swift in Sources */,
+				AE245492233A01CC00E84170 /* AppDelegate.swift in Sources */,
+				AE2454C7233A05A400E84170 /* MobileListPresenter.swift in Sources */,
+				AE2454CE233A05A400E84170 /* MobileListEntity.swift in Sources */,
+				AE245494233A01CC00E84170 /* SceneDelegate.swift in Sources */,
+				AE2454C8233A05A400E84170 /* MobileListInteractor.swift in Sources */,
+				AE2454CD233A05A400E84170 /* MobileListViewController.swift in Sources */,
+				AE2454C9233A05A400E84170 /* MobileListModels.swift in Sources */,
+				AE2454AA233A03E400E84170 /* MobileListTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AE245497233A01CC00E84170 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE245498233A01CC00E84170 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AE24549C233A01CD00E84170 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE24549D233A01CD00E84170 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE2454A0233A01CD00E84170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE2454A1233A01CD00E84170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE2454A3233A01CD00E84170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MobileGuideClean/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JJJiratip.MobileGuideClean;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE2454A4233A01CD00E84170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MobileGuideClean/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JJJiratip.MobileGuideClean;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE245489233A01CC00E84170 /* Build configuration list for PBXProject "MobileGuideClean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE2454A0233A01CD00E84170 /* Debug */,
+				AE2454A1233A01CD00E84170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE2454A2233A01CD00E84170 /* Build configuration list for PBXNativeTarget "MobileGuideClean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE2454A3233A01CD00E84170 /* Debug */,
+				AE2454A4233A01CD00E84170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE245486233A01CC00E84170 /* Project object */;
+}
