@@ -8,16 +8,6 @@
 
 import Foundation
 
-/*
- 
- The MobileListStore class implements the MobileListStoreProtocol.
- 
- The source for the data could be a database, cache, or a web service.
- 
- You may remove these comments from the file.
- 
- */
-
 class MobileListStore: MobileListStoreProtocol {
     func getMobileList(url: String, _ completion: @escaping (Result<[MobileModel], Error>) -> Void) {
         guard let url = URL(string: url) else {
@@ -47,9 +37,6 @@ class MobileListStore: MobileListStoreProtocol {
             }
         }
         task.resume()
-        //            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-        ////                completion(Result.success([MobileModel]()))
-        //            }
     }
 }
 

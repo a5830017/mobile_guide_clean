@@ -68,23 +68,12 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
         // NOTE: Display the result from the Presenter
         switch viewModel.content {
         case .success(let mobiles):
-            for mobile in mobiles{
-                let name = mobile.name
-                let price = mobile.price
-                let rating = mobile.rating
-                
-                let setToMobileList = MobileList.GetMobile.ViewModel.DisplayMobileList(price: price, name: name, rating: rating)
-                
-                mobileList.append(setToMobileList)
-                tableViewMobileList.reloadData()
-            }
-            
+            mobileList = mobiles
+            tableViewMobileList.reloadData()
             
         case .failure(let error):
             break
         }
-        
-        // nameTextField.text = viewModel.name
     }
     
     // MARK: - Router
@@ -108,10 +97,8 @@ extension MobileListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mobileTableViewCell", for: indexPath) as? MobileListTableViewCell else {
             return UITableViewCell()
         }
-        //        var favSave : [Bool] = []
-        var mobile: MobileList.GetMobile.ViewModel.DisplayMobileList = mobileList[indexPath.row]
+        let mobile: MobileList.GetMobile.ViewModel.DisplayMobileList = mobileList[indexPath.row]
         cell.setupUI(mobile: mobile)
-        //            cell.setupUI(mobile: mobile, index : indexPath.row, segmentState : segmentState)
         //            cell.delegate = self
         
         return cell
