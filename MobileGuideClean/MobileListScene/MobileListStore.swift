@@ -33,10 +33,15 @@ class MobileListStore: MobileListStoreProtocol {
                     do {
                         let mobile = try JSONDecoder().decode([MobileModel].self, from: data)
                         print(mobile)
-                        completion(Result.success(mobile))
+                        DispatchQueue.main.async {
+                            completion(Result.success(mobile))
+                        }
                     } catch (let error) { // get error
                         print(error)
                         print("parse JSON failed")
+                        DispatchQueue.main.async {
+                            completion(Result.failure(error))
+                        }
                     }
                 }
             }
