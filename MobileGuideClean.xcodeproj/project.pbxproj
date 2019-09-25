@@ -22,6 +22,7 @@
 		AE2454CC233A05A400E84170 /* MobileListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C4233A05A400E84170 /* MobileListRouter.swift */; };
 		AE2454CD233A05A400E84170 /* MobileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C5233A05A400E84170 /* MobileListViewController.swift */; };
 		AE2454CE233A05A400E84170 /* MobileListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C6233A05A400E84170 /* MobileListEntity.swift */; };
+		AE2454D0233A0DCC00E84170 /* ConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454CF233A0DCC00E84170 /* ConstantValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		AE2454C4233A05A400E84170 /* MobileListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListRouter.swift; sourceTree = "<group>"; };
 		AE2454C5233A05A400E84170 /* MobileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListViewController.swift; sourceTree = "<group>"; };
 		AE2454C6233A05A400E84170 /* MobileListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListEntity.swift; sourceTree = "<group>"; };
+		AE2454CF233A0DCC00E84170 /* ConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				AE24549A233A01CD00E84170 /* Assets.xcassets */,
 				AE24549C233A01CD00E84170 /* LaunchScreen.storyboard */,
 				AE24549F233A01CD00E84170 /* Info.plist */,
+				AE2454CF233A0DCC00E84170 /* ConstantValue.swift */,
 			);
 			path = MobileGuideClean;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				AE2454CA233A05A400E84170 /* MobileListStore.swift in Sources */,
 				AE2454CC233A05A400E84170 /* MobileListRouter.swift in Sources */,
 				AE2454CB233A05A400E84170 /* MobileListWorker.swift in Sources */,
+				AE2454D0233A0DCC00E84170 /* ConstantValue.swift in Sources */,
 				AE245492233A01CC00E84170 /* AppDelegate.swift in Sources */,
 				AE2454C7233A05A400E84170 /* MobileListPresenter.swift in Sources */,
 				AE2454CE233A05A400E84170 /* MobileListEntity.swift in Sources */,
