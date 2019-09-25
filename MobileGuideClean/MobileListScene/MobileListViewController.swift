@@ -10,6 +10,8 @@ import UIKit
 
 protocol MobileListViewControllerInterface: class {
     func displaySomething(viewModel: MobileList.GetMobile.ViewModel)
+    func displaySortedMobile(viewModel: MobileList.SortMobile.ViewModel)
+    func displayFavouriteMobile(viewModel: MobileList.SwitchSegment.ViewModel)
 }
 
 class MobileListViewController: UIViewController, MobileListViewControllerInterface {
@@ -18,7 +20,13 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     var router: MobileListRouter!
     
     @IBOutlet weak var tableViewMobileList : UITableView!
+    @IBOutlet weak var sortButton: UIButton!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    var tableViewCellId: String = "mobileTableViewCell"
+    //    var mobileList: [MobileList.GetMobile.ViewModel.DisplayMobileList] = []
+    var mobileList: [DisplayMobileList] = []
+    var favList: [DisplayMobileList] = []
     
     // MARK: - Object lifecycle
     
@@ -60,9 +68,58 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
         interactor.doSomething(request: request)
     }
     
-    // MARK: - Display logic
+    // MARK: - Button Click
+    @IBAction func didSortButtonTap(_ sender: Any) {
+        let alertController = UIAlertController(title: "sort", message:
+            "", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: { [weak self] action in
+            let request = MobileList.SortMobile.Request(sortType: .priceLowToHigh)
+            self?.interactor.sortMobile(request: request)
+            
+        }))
+        alertController.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: { [weak self] action in
+            let request = MobileList.SortMobile.Request(sortType: .priceHighToLow)
+            self?.interactor.sortMobile(request: request)
+            
+        }))
+        alertController.addAction(UIAlertAction(title: "Rating", style: .default, handler: { [weak self] action in
+            let request = MobileList.SortMobile.Request(sortType: .rating)
+            self?.interactor.sortMobile(request: request)
+            
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
-    var mobileList:[MobileList.GetMobile.ViewModel.DisplayMobileList] = []
+    // MARK: - Segment Control
+    
+    @IBAction func didSegmentControlChange(_ sender: UISegmentedControl) {
+        switch(sender.selectedSegmentIndex) {
+        case 0: // ALL
+            print("ALL")
+            let request = MobileList.SwitchSegment.Request(segmentState: .all)
+            self.interactor.favMobile(request: request)
+//            tableViewMobileList.reloadData()
+            
+            
+        case 1: // Favourite
+            let request = MobileList.SwitchSegment.Request(segmentState: .favourite)
+            self.interactor.favMobile(request: request)
+//            tableViewMobileList.reloadData()
+            print("FAV")
+            
+            
+        default:
+            print("unknown")
+        }
+    }
+    
+    
+    
+    
+    // MARK: - Display logic
     
     func displaySomething(viewModel: MobileList.GetMobile.ViewModel) {
         // NOTE: Display the result from the Presenter
@@ -75,6 +132,19 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
             break
         }
     }
+    
+//    var sortedList: [MobileList.SortMobile.ViewModel.DisplayMobileList] = []
+    
+    func displaySortedMobile(viewModel: MobileList.SortMobile.ViewModel) {
+        mobileList = viewModel.content
+        tableViewMobileList.reloadData()
+    }
+    
+    func displayFavouriteMobile(viewModel: MobileList.SwitchSegment.ViewModel) {
+        favList = viewModel.content
+        tableViewMobileList.reloadData()
+    }
+        
     
     // MARK: - Router
     
@@ -90,21 +160,42 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
 
 extension MobileListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mobileList.count
+        if(segmentControl.selectedSegmentIndex == 0) {
+            return mobileList.count
+        } else {
+            return favList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "mobileTableViewCell", for: indexPath) as? MobileListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellId, for: indexPath) as? MobileListTableViewCell else {
             return UITableViewCell()
         }
-        let mobile: MobileList.GetMobile.ViewModel.DisplayMobileList = mobileList[indexPath.row]
+        var mobile: DisplayMobileList = mobileList[indexPath.row]
+        if(segmentControl.selectedSegmentIndex == 1){
+            print("fav")
+            mobile = favList[indexPath.row]
+        } else {
+            mobile = mobileList[indexPath.row]
+        }
         cell.setupUI(mobile: mobile)
-        //            cell.delegate = self
+        cell.delegate = self
         
         return cell
     }
 }
 
 extension MobileListViewController: UITableViewDelegate {
+    
+}
+
+extension MobileListViewController: MobileTableViewCellDelegate {
+    func didFavouriteButtonTap(cell: MobileListTableViewCell) {
+        guard let index = tableViewMobileList.indexPath(for: cell) else {
+            return
+        }
+        mobileList[index.row].isFav = !mobileList[index.row].isFav
+        tableViewMobileList.reloadData()
+    }
     
 }

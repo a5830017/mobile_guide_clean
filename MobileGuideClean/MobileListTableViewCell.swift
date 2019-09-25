@@ -9,9 +9,9 @@
 import UIKit
 //import Kingfisher
 
-//protocol MobileTableViewCellDelegate: class {
-//    func didFavouriteButtonTap(cell: MobileListTableViewCell)
-//}
+protocol MobileTableViewCellDelegate: class {
+    func didFavouriteButtonTap(cell: MobileListTableViewCell)
+}
 
 class MobileListTableViewCell: UITableViewCell {
     
@@ -22,19 +22,18 @@ class MobileListTableViewCell: UITableViewCell {
     @IBOutlet weak var mobileImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     
-//    var delegate: MobileTableViewCellDelegate?
-    func setupUI(mobile : MobileList.GetMobile.ViewModel.DisplayMobileList){
+    var delegate: MobileTableViewCellDelegate?
+    func setupUI(mobile : DisplayMobileList){
         mobileName.text = mobile.name
 //        mobileDescription.text = mobile.description
         mobilePrice.text = "Price : $" + String(mobile.price)
         mobileRating.text = "Rating : " + String(mobile.rating)
 //        mobileImageView.kf.setImage(with: URL(string: mobile.thumbImageURL))
 //        favoriteButton.tag = index //tag btn click index
-//        favoriteButton.isSelected = mobile.isFavourite ?? false //swap button image
+        favoriteButton.isSelected = mobile.isFav //swap button image
         
     }
-    
-//    @IBAction func favoriteButton(_ sender: UIButton) {
-//        delegate?.didFavouriteButton(cell: self)
-//    }
+    @IBAction func didFavouriteButtonTap(_ sender: Any) {
+        delegate?.didFavouriteButtonTap(cell: self)
+    }
 }
