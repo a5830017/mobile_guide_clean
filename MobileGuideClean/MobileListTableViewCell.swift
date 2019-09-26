@@ -25,10 +25,10 @@ class MobileListTableViewCell: UITableViewCell {
     var delegate: MobileTableViewCellDelegate?
     func setupUI(mobile : DisplayMobileList){
         mobileName.text = mobile.name
-//        mobileDescription.text = mobile.description
+        mobileDescription.text = mobile.description
         mobilePrice.text = mobile.price
         mobileRating.text = mobile.rating
-//        mobileImageView.kf.setImage(with: URL(string: mobile.thumbImageURL))
+        mobileImageView.kf.setImage(with: URL(string: mobile.thumbImageURL))
 //        favoriteButton.tag = index //tag btn click index
         favoriteButton.isSelected = mobile.isFav //swap button image
         

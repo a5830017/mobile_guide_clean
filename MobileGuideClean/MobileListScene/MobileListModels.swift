@@ -9,20 +9,15 @@
 import UIKit
 
 struct DisplayMobileList {
-    //            let thumbImageURL : String
-    //            let brand : String
+    let thumbImageURL : String
+    let brand : String
     let price : String
-    //            let description : String
+    let description : String
     let name : String
     let rating : String
     var isFav : Bool
     let id : Int
 }
-
-//struct FavouriteMobile {
-//    let id : Int
-//    let isFav : Bool
-//}
 
 struct MobileList {
     /// This structure represents a use case
@@ -42,39 +37,6 @@ struct MobileList {
             
         }
     }
-    
-//    struct SortMobile {
-//        /// Data struct sent to Interactor
-//        struct Request {
-//            var sortType: SortType
-////            let result: [FavouriteMobile]
-//        }
-//        /// DataypeTstruct sent to Presenter
-//        struct Response {
-//            let result: [MobileModel]
-//        }
-//        /// Data struct sent to ViewController
-//        struct ViewModel {
-//            let content: [DisplayMobileList]
-//        }
-//    }
-    
-    /// This structure represents a use case
-//    struct SwitchSegment {
-//        /// Data struct sent to Interactor
-//        struct Request {
-//            var segmentState: SegmentState
-//        }
-//        /// Data struct sent to Presenter
-//        struct Response {
-//            let result: [MobileModel]
-//        }
-//        /// Data struct sent to ViewController
-//        struct ViewModel {
-//            let content: [DisplayMobileList]
-//
-//        }
-//    }
     
     struct FeatureMobile {
         /// Data struct sent to Interactor
