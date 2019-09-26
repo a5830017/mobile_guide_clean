@@ -32,8 +32,8 @@ class MobileListPresenter: MobileListPresenterInterface {
                 let name = mobile.name
                 //                let price = "price : $\(mobile.price)"
                 //                let rating = "rating : \(mobile.rating)"
-                let price = "\(mobile.price)"
-                let rating = "\(mobile.rating)"
+                let price = "price : $\(mobile.price)"
+                let rating = "rating : \(mobile.rating)"
                 let isFav = mobile.isFavourite ?? false
                 let id = mobile.id
                 return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)

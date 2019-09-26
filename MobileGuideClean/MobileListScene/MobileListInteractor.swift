@@ -13,7 +13,7 @@ protocol MobileListInteractorInterface {
     func check(request: MobileList.FeatureMobile.Request)
 //    func checkSort(request: MobileList.FeatureMobile.Request)
     func setFav(request: MobileList.FavId.Request)
-    var model: [MobileModel]? { get }
+//    var model: [MobileModel]? { get }
     var mobileList: [MobileModel]? { get set }
     var favList: [MobileModel]? { get set }
     var segmentState: SegmentState? { get set }
@@ -38,7 +38,7 @@ class MobileListInteractor: MobileListInteractorInterface {
         worker?.getMobileList(url: url) { [weak self] response in
             switch response {
             case .success(let mobile):
-                self?.model = mobile
+//                self?.model = mobile
                 self?.mobileList = mobile
                 let result: Result<[MobileModel], Error> = .success(mobile)
                 let response = MobileList.GetMobile.Response(result: result)
@@ -53,7 +53,7 @@ class MobileListInteractor: MobileListInteractorInterface {
     }
     
     func setFav(request: MobileList.FavId.Request) {
-            guard let model = model,
+            guard let model = mobileList,
                 let index = model.firstIndex(where: { $0.id == request.id }) else {
                     return
             }
