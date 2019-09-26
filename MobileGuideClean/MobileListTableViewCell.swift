@@ -23,7 +23,7 @@ class MobileListTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     var delegate: MobileTableViewCellDelegate?
-    func setupUI(mobile : DisplayMobileList){
+    func setupUI(mobile : DisplayMobileList, segmentState: SegmentState){
         mobileName.text = mobile.name
         mobileDescription.text = mobile.description
         mobilePrice.text = mobile.price
@@ -32,6 +32,11 @@ class MobileListTableViewCell: UITableViewCell {
 //        favoriteButton.tag = index //tag btn click index
         favoriteButton.isSelected = mobile.isFav //swap button image
         
+        if(segmentState == .favourite){
+            favoriteButton.isHidden = true
+        } else {
+            favoriteButton.isHidden = false
+        }
     }
     @IBAction func didFavouriteButtonTap(_ sender: Any) {
         delegate?.didFavouriteButtonTap(cell: self)

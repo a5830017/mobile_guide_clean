@@ -166,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="129.91071428571428"/>
         </scene>
-        <!--name-->
+        <!--Detail View Controller-->
         <scene sceneID="4d8-Jq-u87">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="pbe-BM-PIa" customClass="DetailViewController" customModule="MobileGuideClean" customModuleProvider="target" sceneMemberID="viewController">
@@ -231,7 +231,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-5U-XBd">
-                                <rect key="frame" x="0.0" y="7.5" width="414" height="36.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="36.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-Wo-WmE">
                                         <rect key="frame" x="8" y="8" width="49" height="20.5"/>
@@ -274,17 +274,17 @@
                             <constraint firstItem="tfc-uj-xCE" firstAttribute="top" secondItem="xly-FM-g9h" secondAttribute="top" id="BBK-L0-y07"/>
                             <constraint firstItem="xly-FM-g9h" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vxQ-ch-oFD" secondAttribute="bottom" constant="8" id="JmE-R2-A7B"/>
                             <constraint firstItem="vxQ-ch-oFD" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" constant="8" id="Ll7-PH-6PB"/>
-                            <constraint firstItem="tfc-uj-xCE" firstAttribute="top" secondItem="wcZ-5U-XBd" secondAttribute="bottom" id="P1A-mW-Udr"/>
                             <constraint firstItem="tfc-uj-xCE" firstAttribute="trailing" secondItem="xly-FM-g9h" secondAttribute="trailing" id="W1O-7f-NaE"/>
                             <constraint firstItem="wcZ-5U-XBd" firstAttribute="trailing" secondItem="xly-FM-g9h" secondAttribute="trailing" id="Wj5-nP-ewX"/>
                             <constraint firstItem="tfc-uj-xCE" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" id="XEK-Us-KFB"/>
                             <constraint firstItem="wcZ-5U-XBd" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" id="haR-Dp-sHW"/>
                             <constraint firstItem="xly-FM-g9h" firstAttribute="trailing" secondItem="vxQ-ch-oFD" secondAttribute="trailing" constant="8" id="uOE-EK-bwt"/>
                             <constraint firstItem="vxQ-ch-oFD" firstAttribute="top" secondItem="tfc-uj-xCE" secondAttribute="bottom" constant="20" id="v9c-Eb-zJg"/>
+                            <constraint firstItem="wcZ-5U-XBd" firstAttribute="top" secondItem="xly-FM-g9h" secondAttribute="top" id="xHj-36-vfz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xly-FM-g9h"/>
                     </view>
-                    <navigationItem key="navigationItem" title="name" id="hah-Zi-JeX"/>
+                    <navigationItem key="navigationItem" id="hah-Zi-JeX"/>
                     <connections>
                         <outlet property="collectionView" destination="tfc-uj-xCE" id="p1l-Om-9mz"/>
                     </connections>

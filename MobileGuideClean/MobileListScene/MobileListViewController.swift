@@ -197,7 +197,7 @@ extension MobileListViewController: UITableViewDataSource {
         guard let mobile = mobileList?[indexPath.row] else {
             return UITableViewCell()
         }
-        cell.setupUI(mobile: mobile)
+        cell.setupUI(mobile: mobile, segmentState: self.segmentState ?? .all)
         cell.delegate = self
         
         return cell
@@ -220,6 +220,27 @@ extension MobileListViewController: UITableViewDelegate {
 //            performSegue(withIdentifier: tableViewshowDetail, sender: sender)
         }
     }
+    
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        if segmentState == .all {
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
+//    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//            if editingStyle == .delete {
+//                let favId = favList.remove(at: indexPath.row).id
+//                for i in 0...mobileList!.count - 1{
+//                    if mobileList[i].id == favId {
+//                        mobileList![i].isFavourite = !mobileList[i].isFavourite!
+//                    }
+//                }
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            }
+//        }
+    
 }
 
 extension MobileListViewController: MobileTableViewCellDelegate {

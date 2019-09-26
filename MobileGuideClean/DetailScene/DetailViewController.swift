@@ -89,7 +89,7 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     }
 }
 
-extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate  {
+extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imgList.count
     }
@@ -101,10 +101,12 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
             return UICollectionViewCell()
         }
 //        let mobileModel: DisplayMobileList = mobile
+        
         let imgModel : DisplayMobileDetail = imgList[indexPath.row]
         //            cell.setupUI(mobile: mobileModel, img: imgModel)
         guard let mobile = self.mobileData else { return UICollectionViewCell() }
         cell.setupUI(img: imgModel, mobile: mobile)
+        self.navigationItem.title = "\(mobile.name)"
         return cell
     }
     
