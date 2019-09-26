@@ -26,8 +26,8 @@ class MobileListTableViewCell: UITableViewCell {
     func setupUI(mobile : DisplayMobileList){
         mobileName.text = mobile.name
 //        mobileDescription.text = mobile.description
-        mobilePrice.text = "Price : $" + String(mobile.price)
-        mobileRating.text = "Rating : " + String(mobile.rating)
+        mobilePrice.text = mobile.price
+        mobileRating.text = mobile.rating
 //        mobileImageView.kf.setImage(with: URL(string: mobile.thumbImageURL))
 //        favoriteButton.tag = index //tag btn click index
         favoriteButton.isSelected = mobile.isFav //swap button image

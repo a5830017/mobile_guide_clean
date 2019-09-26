@@ -23,6 +23,15 @@
 		AE2454CD233A05A400E84170 /* MobileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C5233A05A400E84170 /* MobileListViewController.swift */; };
 		AE2454CE233A05A400E84170 /* MobileListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C6233A05A400E84170 /* MobileListEntity.swift */; };
 		AE2454D0233A0DCC00E84170 /* ConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454CF233A0DCC00E84170 /* ConstantValue.swift */; };
+		AE2454E0233BC72500E84170 /* DetailStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454D8233BC72500E84170 /* DetailStore.swift */; };
+		AE2454E1233BC72500E84170 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454D9233BC72500E84170 /* DetailPresenter.swift */; };
+		AE2454E2233BC72500E84170 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DA233BC72500E84170 /* DetailWorker.swift */; };
+		AE2454E3233BC72500E84170 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DB233BC72500E84170 /* DetailRouter.swift */; };
+		AE2454E4233BC72500E84170 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DC233BC72500E84170 /* DetailModels.swift */; };
+		AE2454E5233BC72500E84170 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DD233BC72500E84170 /* DetailViewController.swift */; };
+		AE2454E6233BC72500E84170 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DE233BC72500E84170 /* DetailInteractor.swift */; };
+		AE2454E7233BC72500E84170 /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DF233BC72500E84170 /* DetailEntity.swift */; };
+		AE2454E9233C5F9D00E84170 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +53,15 @@
 		AE2454C5233A05A400E84170 /* MobileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListViewController.swift; sourceTree = "<group>"; };
 		AE2454C6233A05A400E84170 /* MobileListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListEntity.swift; sourceTree = "<group>"; };
 		AE2454CF233A0DCC00E84170 /* ConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantValue.swift; sourceTree = "<group>"; };
+		AE2454D8233BC72500E84170 /* DetailStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStore.swift; sourceTree = "<group>"; };
+		AE2454D9233BC72500E84170 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		AE2454DA233BC72500E84170 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		AE2454DB233BC72500E84170 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		AE2454DC233BC72500E84170 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		AE2454DD233BC72500E84170 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AE2454DE233BC72500E84170 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		AE2454DF233BC72500E84170 /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
+		AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +94,14 @@
 		AE245490233A01CC00E84170 /* MobileGuideClean */ = {
 			isa = PBXGroup;
 			children = (
+				AE2454D7233BC6FC00E84170 /* DetailScene */,
 				AE2454BE233A05A400E84170 /* MobileListScene */,
 				AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */,
+				AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */,
+				AE245497233A01CC00E84170 /* Main.storyboard */,
 				AE245491233A01CC00E84170 /* AppDelegate.swift */,
 				AE245493233A01CC00E84170 /* SceneDelegate.swift */,
 				AE245495233A01CC00E84170 /* ViewController.swift */,
-				AE245497233A01CC00E84170 /* Main.storyboard */,
 				AE24549A233A01CD00E84170 /* Assets.xcassets */,
 				AE24549C233A01CD00E84170 /* LaunchScreen.storyboard */,
 				AE24549F233A01CD00E84170 /* Info.plist */,
@@ -103,6 +123,21 @@
 				AE2454C6233A05A400E84170 /* MobileListEntity.swift */,
 			);
 			path = MobileListScene;
+			sourceTree = "<group>";
+		};
+		AE2454D7233BC6FC00E84170 /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				AE2454D8233BC72500E84170 /* DetailStore.swift */,
+				AE2454D9233BC72500E84170 /* DetailPresenter.swift */,
+				AE2454DA233BC72500E84170 /* DetailWorker.swift */,
+				AE2454DB233BC72500E84170 /* DetailRouter.swift */,
+				AE2454DC233BC72500E84170 /* DetailModels.swift */,
+				AE2454DD233BC72500E84170 /* DetailViewController.swift */,
+				AE2454DE233BC72500E84170 /* DetailInteractor.swift */,
+				AE2454DF233BC72500E84170 /* DetailEntity.swift */,
+			);
+			path = DetailScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,16 +212,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE245496233A01CC00E84170 /* ViewController.swift in Sources */,
+				AE2454E7233BC72500E84170 /* DetailEntity.swift in Sources */,
 				AE2454CA233A05A400E84170 /* MobileListStore.swift in Sources */,
 				AE2454CC233A05A400E84170 /* MobileListRouter.swift in Sources */,
 				AE2454CB233A05A400E84170 /* MobileListWorker.swift in Sources */,
 				AE2454D0233A0DCC00E84170 /* ConstantValue.swift in Sources */,
 				AE245492233A01CC00E84170 /* AppDelegate.swift in Sources */,
+				AE2454E0233BC72500E84170 /* DetailStore.swift in Sources */,
 				AE2454C7233A05A400E84170 /* MobileListPresenter.swift in Sources */,
+				AE2454E1233BC72500E84170 /* DetailPresenter.swift in Sources */,
 				AE2454CE233A05A400E84170 /* MobileListEntity.swift in Sources */,
+				AE2454E9233C5F9D00E84170 /* DetailCollectionViewCell.swift in Sources */,
+				AE2454E5233BC72500E84170 /* DetailViewController.swift in Sources */,
+				AE2454E6233BC72500E84170 /* DetailInteractor.swift in Sources */,
+				AE2454E2233BC72500E84170 /* DetailWorker.swift in Sources */,
 				AE245494233A01CC00E84170 /* SceneDelegate.swift in Sources */,
 				AE2454C8233A05A400E84170 /* MobileListInteractor.swift in Sources */,
 				AE2454CD233A05A400E84170 /* MobileListViewController.swift in Sources */,
+				AE2454E4233BC72500E84170 /* DetailModels.swift in Sources */,
+				AE2454E3233BC72500E84170 /* DetailRouter.swift in Sources */,
 				AE2454C9233A05A400E84170 /* MobileListModels.swift in Sources */,
 				AE2454AA233A03E400E84170 /* MobileListTableViewCell.swift in Sources */,
 			);

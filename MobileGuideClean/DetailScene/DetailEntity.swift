@@ -21,12 +21,23 @@ import Foundation
 
  */
 
-enum Result<T> {
-  case success(T)
-  case failure(Error)
-}
+//enum Result<T> {
+//  case success(T)
+//  case failure(Error)
+//}
 
 //
 // The entity or business object
 //
-struct Entity {}
+//struct Entity {}
+struct ImageModel : Codable {
+    let url : String
+    let mobileId : Int
+    let id : Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case url
+        case mobileId = "mobile_id"
+        case id
+    }
+}

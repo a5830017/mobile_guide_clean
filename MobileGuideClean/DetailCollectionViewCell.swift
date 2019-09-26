@@ -9,5 +9,10 @@
 import UIKit
 
 class DetailCollectionViewCell: UICollectionViewCell {
+ 
+    @IBOutlet weak var detailDescription: UILabel!
+    @IBOutlet weak var detailRating: UILabel!
+    @IBOutlet weak var detailPrice: UILabel!
+    @IBOutlet weak var mobileImageView: UIImageView!
     
 }

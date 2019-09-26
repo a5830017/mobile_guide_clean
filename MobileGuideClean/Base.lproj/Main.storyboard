@@ -160,13 +160,14 @@
                         <outlet property="segmentControl" destination="fE7-vE-Umx" id="ous-Fd-dRG"/>
                         <outlet property="sortButton" destination="eXa-Ee-vrw" id="cj7-zQ-W1w"/>
                         <outlet property="tableViewMobileList" destination="91r-VD-GB4" id="jDN-5y-TqW"/>
+                        <segue destination="pbe-BM-PIa" kind="show" id="75t-WQ-1Na"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3U-Bf-bOw" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="129.91071428571428"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--name-->
         <scene sceneID="4d8-Jq-u87">
             <objects>
                 <viewController id="pbe-BM-PIa" customClass="DetailViewController" customModule="MobileGuideClean" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +185,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mobileCollectionViewCell" id="qHu-Sf-K2I" customClass="CollectionViewCell" customModule="MobileGuideClean" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mobileCollectionViewCell" id="qHu-Sf-K2I" customClass="DetailCollectionViewCell" customModule="MobileGuideClean" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="12" width="419" height="290"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -205,16 +206,16 @@
                                             <constraint firstItem="odk-oJ-IIL" firstAttribute="leading" secondItem="qHu-Sf-K2I" secondAttribute="leading" id="mYv-OO-ene"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="detailDescription" destination="vxQ-ch-oFD" id="7XY-rW-gOB"/>
-                                            <outlet property="detailPrice" destination="t5A-VD-mfg" id="YZ2-KE-QDz"/>
-                                            <outlet property="detailRating" destination="SHh-Wo-WmE" id="gTD-GT-9bX"/>
-                                            <outlet property="mobileImageView" destination="odk-oJ-IIL" id="Jpa-7L-pnv"/>
+                                            <outlet property="detailDescription" destination="vxQ-ch-oFD" id="d34-Ch-PXQ"/>
+                                            <outlet property="detailPrice" destination="t5A-VD-mfg" id="XNn-9r-LtA"/>
+                                            <outlet property="detailRating" destination="SHh-Wo-WmE" id="Aaq-An-afC"/>
+                                            <outlet property="mobileImageView" destination="odk-oJ-IIL" id="Ppu-zB-Tre"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="pbe-BM-PIa" id="qDV-6u-aB1"/>
-                                    <outlet property="delegate" destination="pbe-BM-PIa" id="LyW-H7-94E"/>
+                                    <outlet property="dataSource" destination="pbe-BM-PIa" id="i2q-JY-cY6"/>
+                                    <outlet property="delegate" destination="pbe-BM-PIa" id="4S0-5p-EFn"/>
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-ch-oFD">
@@ -229,7 +230,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-5U-XBd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="36.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="36.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-Wo-WmE">
                                         <rect key="frame" x="8" y="8" width="49" height="20.5"/>
@@ -284,9 +285,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xly-FM-g9h"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hah-Zi-JeX"/>
+                    <navigationItem key="navigationItem" title="name" id="hah-Zi-JeX"/>
                     <connections>
-                        <outlet property="collectionView" destination="tfc-uj-xCE" id="btA-hl-sH1"/>
+                        <outlet property="collectionView" destination="tfc-uj-xCE" id="p1l-Om-9mz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amd-LX-9bG" sceneMemberID="firstResponder"/>
