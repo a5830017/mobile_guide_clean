@@ -10,12 +10,14 @@ import UIKit
 
 protocol MobileListPresenterInterface {
     func presentSomething(response: MobileList.GetMobile.Response)
-    func presentSortedMobile(response: MobileList.SortMobile.Response)
+    func presentMobile(response: MobileList.SortMobile.Response)
     func presentFavouriteMobile(response: MobileList.SwitchSegment.Response)
 }
 
 class MobileListPresenter: MobileListPresenterInterface {
     weak var viewController: MobileListViewControllerInterface!
+    var mobileList: [DisplayMobileList] = []
+    var favList: [DisplayMobileList] = []
     
     // MARK: - Presentation logic
     
@@ -27,10 +29,13 @@ class MobileListPresenter: MobileListPresenterInterface {
             var mobileViewModel: [DisplayMobileList] = []
             mobileViewModel = mobiles.map({ (mobile) -> DisplayMobileList in
                 let name = mobile.name
-                let price = "price : $\(mobile.price)"
-                let rating = "rating : \(mobile.rating)"
+//                let price = "price : $\(mobile.price)"
+//                let rating = "rating : \(mobile.rating)"
+                let price = "\(mobile.price)"
+                let rating = "\(mobile.rating)"
                 let isFav = mobile.isFavourite ?? false
-                return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav)
+                let id = mobile.id
+                return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)
             })
 //            for mobile in mobiles{
 //                let name = mobile.name
@@ -49,21 +54,32 @@ class MobileListPresenter: MobileListPresenterInterface {
         viewController.displaySomething(viewModel: viewModel)
     }
     
-    func presentSortedMobile(response: MobileList.SortMobile.Response) {
+    func presentMobile(response: MobileList.SortMobile.Response) {
         let sorted = response.result
         var sortedMobile: [DisplayMobileList] = []
-        for mobile in sorted {
+        sortedMobile = sorted.map({ (mobile) -> DisplayMobileList in
             let name = mobile.name
             let price = "price : $\(mobile.price)"
             let rating = "rating : \(mobile.rating)"
+//            let price = "\(mobile.price)"
+//            let rating = "\(mobile.rating)"
             let isFav = mobile.isFavourite ?? false
-            
-            let setToSortViewModel = DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav)
-            
-            sortedMobile.append(setToSortViewModel)
-        }
-        let viewModel = MobileList.SortMobile.ViewModel(content: sortedMobile)
-        viewController.displaySortedMobile(viewModel: viewModel)
+            let id = mobile.id
+            return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)
+        })
+        //        for mobile in sorted {
+//            let name = mobile.name
+//            let price = "price : $\(mobile.price)"
+//            let rating = "rating : \(mobile.rating)"
+//            let isFav = mobile.isFav
+//
+//            let setToSortViewModel = DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav)
+//
+//            sortedMobile.append(setToSortViewModel)
+//        }
+        mobileList = sortedMobile
+        let viewModel = MobileList.SortMobile.ViewModel(content: mobileList)
+        viewController.displayMobile(viewModel: viewModel)
     }
     
     func presentFavouriteMobile(response: MobileList.SwitchSegment.Response) {
@@ -74,9 +90,11 @@ class MobileListPresenter: MobileListPresenterInterface {
             let price = "price : $\(mobile.price)"
             let rating = "rating : \(mobile.rating)"
             let isFav = mobile.isFavourite ?? false
-            return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav)
+            let id = mobile.id
+            return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)
         })
-        let viewModel = MobileList.SwitchSegment.ViewModel(content: favList)
+        mobileList = favList
+        let viewModel = MobileList.SwitchSegment.ViewModel(content: mobileList)
         viewController.displayFavouriteMobile(viewModel: viewModel)
     }
 }

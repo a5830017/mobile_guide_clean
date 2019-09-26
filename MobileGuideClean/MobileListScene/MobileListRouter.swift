@@ -37,18 +37,30 @@ class MobileListRouter: MobileListRouterInput {
 
   // MARK: - Communication
 
-  func passDataToNextScene(segue: UIStoryboardSegue) {
+  func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
+    let showMobileDetail: String = "showMobileDetail"
     // NOTE: Teach the router which scenes it can communicate with
+    
+    //    if segue.identifier == "showMobileDetail",
+    //        let viewController = segue.destination as? DetailViewController,
+    //        let selectedMobile = sender as? MobileModel {
+    //        viewController.mobile = selectedMobile
 
-    if segue.identifier == "ShowSomewhereScene" {
-      passDataToSomewhereScene(segue: segue)
+    if segue.identifier == showMobileDetail {
+        passDataToSomewhereScene(for: segue, sender: sender)
     }
   }
 
-  func passDataToSomewhereScene(segue: UIStoryboardSegue) {
+  func passDataToSomewhereScene(for segue: UIStoryboardSegue, sender: Any?) {
     // NOTE: Teach the router how to pass data to the next scene
-
-    // let someWhereViewController = segue.destinationViewController as! SomeWhereViewController
-    // someWhereViewController.interactor.model = viewController.interactor.model
-  }
+//    let viewController = segue.destination as? DetailViewController,
+//        let selectedMobile = sender as? MobileModel {
+    //        viewController.mobile = selectedMobile
+    //    }
+    //
+    let DetailViewController = segue.destination as? DetailViewController
+    let selectedMobile = sender as? MobileModel
+    DetailViewController!.interactor.mobile = selectedMobile//viewController.interactor.model
+    
+    }
 }

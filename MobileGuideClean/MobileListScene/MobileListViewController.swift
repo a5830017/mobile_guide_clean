@@ -10,7 +10,7 @@ import UIKit
 
 protocol MobileListViewControllerInterface: class {
     func displaySomething(viewModel: MobileList.GetMobile.ViewModel)
-    func displaySortedMobile(viewModel: MobileList.SortMobile.ViewModel)
+    func displayMobile(viewModel: MobileList.SortMobile.ViewModel)
     func displayFavouriteMobile(viewModel: MobileList.SwitchSegment.ViewModel)
 }
 
@@ -24,9 +24,11 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     var tableViewCellId: String = "mobileTableViewCell"
+    var tableViewshowDetail : String = "showMobileDetail"
     //    var mobileList: [MobileList.GetMobile.ViewModel.DisplayMobileList] = []
     var mobileList: [DisplayMobileList] = []
     var favList: [DisplayMobileList] = []
+    
     
     // MARK: - Object lifecycle
     
@@ -135,7 +137,7 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     
 //    var sortedList: [MobileList.SortMobile.ViewModel.DisplayMobileList] = []
     
-    func displaySortedMobile(viewModel: MobileList.SortMobile.ViewModel) {
+    func displayMobile(viewModel: MobileList.SortMobile.ViewModel) {
         mobileList = viewModel.content
         tableViewMobileList.reloadData()
     }
@@ -148,13 +150,20 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     
     // MARK: - Router
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        router.passDataToNextScene(segue: segue)
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router.passDataToNextScene(segue: segue)
+        router.passDataToNextScene(segue: segue, sender: sender)
+//    if segue.identifier == "showMobileDetail",
+//        let viewController = segue.destination as? DetailViewController,
+//        let selectedMobile = sender as? MobileModel {
+//        viewController.mobile = selectedMobile
     }
     
-    @IBAction func unwindToMobileListViewController(from segue: UIStoryboardSegue) {
+    @IBAction func unwindToMobileListViewController(from segue: UIStoryboardSegue, sender: Any?) {
         print("unwind...")
-        router.passDataToNextScene(segue: segue)
+        router.passDataToNextScene(segue: segue, sender: sender)
     }
 }
 
@@ -165,6 +174,7 @@ extension MobileListViewController: UITableViewDataSource {
         } else {
             return favList.count
         }
+        return mobileList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -186,7 +196,13 @@ extension MobileListViewController: UITableViewDataSource {
 }
 
 extension MobileListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(segmentControl.selectedSegmentIndex == 0){
+            performSegue(withIdentifier: tableViewshowDetail, sender: mobileList[indexPath.row])
+        } else {
+            performSegue(withIdentifier: tableViewshowDetail, sender: favList[indexPath.row])
+        }
+    }
 }
 
 extension MobileListViewController: MobileTableViewCellDelegate {
@@ -194,8 +210,10 @@ extension MobileListViewController: MobileTableViewCellDelegate {
         guard let index = tableViewMobileList.indexPath(for: cell) else {
             return
         }
-        mobileList[index.row].isFav = !mobileList[index.row].isFav
-        tableViewMobileList.reloadData()
+//        mobileList[index.row].isFav = !mobileList[index.row].isFav
+        let request = MobileList.FavId.Request(id: mobileList[index.row].id)
+        self.interactor.setFav(request: request)
+        
     }
     
 }

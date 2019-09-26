@@ -16,6 +16,7 @@ struct DisplayMobileList {
     let name : String
     let rating : String
     var isFav : Bool
+    let id : Int
 }
 
 //struct FavouriteMobile {
@@ -46,6 +47,7 @@ struct MobileList {
         /// Data struct sent to Interactor
         struct Request {
             var sortType: SortType
+//            let result: [FavouriteMobile]
         }
         /// DataypeTstruct sent to Presenter
         struct Response {
@@ -62,6 +64,22 @@ struct MobileList {
         /// Data struct sent to Interactor
         struct Request {
             var segmentState: SegmentState
+        }
+        /// Data struct sent to Presenter
+        struct Response {
+            let result: [MobileModel]
+        }
+        /// Data struct sent to ViewController
+        struct ViewModel {
+            let content: [DisplayMobileList]
+            
+        }
+    }
+    
+    struct FavId {
+        /// Data struct sent to Interactor
+        struct Request {
+            var id: Int
         }
         /// Data struct sent to Presenter
         struct Response {
