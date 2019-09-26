@@ -43,38 +43,55 @@ struct MobileList {
         }
     }
     
-    struct SortMobile {
-        /// Data struct sent to Interactor
-        struct Request {
-            var sortType: SortType
-//            let result: [FavouriteMobile]
-        }
-        /// DataypeTstruct sent to Presenter
-        struct Response {
-            let result: [MobileModel]
-        }
-        /// Data struct sent to ViewController
-        struct ViewModel {
-            let content: [DisplayMobileList]
-        }
-    }
+//    struct SortMobile {
+//        /// Data struct sent to Interactor
+//        struct Request {
+//            var sortType: SortType
+////            let result: [FavouriteMobile]
+//        }
+//        /// DataypeTstruct sent to Presenter
+//        struct Response {
+//            let result: [MobileModel]
+//        }
+//        /// Data struct sent to ViewController
+//        struct ViewModel {
+//            let content: [DisplayMobileList]
+//        }
+//    }
     
     /// This structure represents a use case
-    struct SwitchSegment {
+//    struct SwitchSegment {
+//        /// Data struct sent to Interactor
+//        struct Request {
+//            var segmentState: SegmentState
+//        }
+//        /// Data struct sent to Presenter
+//        struct Response {
+//            let result: [MobileModel]
+//        }
+//        /// Data struct sent to ViewController
+//        struct ViewModel {
+//            let content: [DisplayMobileList]
+//
+//        }
+//    }
+    
+    struct FeatureMobile {
         /// Data struct sent to Interactor
-        struct Request {
-            var segmentState: SegmentState
+            struct Request {
+                var segmentState: SegmentState
+                var sortType: SortType
+            }
+            /// Data struct sent to Presenter
+            struct Response {
+                let result: [MobileModel]
+            }
+            /// Data struct sent to ViewController
+            struct ViewModel {
+                let content: [DisplayMobileList]
+                
+            }
         }
-        /// Data struct sent to Presenter
-        struct Response {
-            let result: [MobileModel]
-        }
-        /// Data struct sent to ViewController
-        struct ViewModel {
-            let content: [DisplayMobileList]
-            
-        }
-    }
     
     struct FavId {
         /// Data struct sent to Interactor

@@ -15,6 +15,8 @@ protocol DetailViewControllerInterface: class {
 class DetailViewController: UIViewController, DetailViewControllerInterface {
     var interactor: DetailInteractorInterface!
     var router: DetailRouter!
+    var imgList : [DisplayMobileDetail] = []
+    let showDetail: String = "showDetail"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -63,7 +65,14 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     func displaySomething(viewModel: Detail.Something.ViewModel) {
         // NOTE: Display the result from the Presenter
         
-        // nameTextField.text = viewModel.name
+        switch viewModel.content {
+        case .success(let imgs):
+            imgList = imgs
+            collectionView.reloadData()
+            
+        case .failure(let error):
+            print(error)
+        }
     }
     
     // MARK: - Router
@@ -77,3 +86,25 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
         router.passDataToNextScene(segue: segue)
     }
 }
+
+extension DetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imgList.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: showDetail, for: indexPath) as? DetailCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        //            let mobileModel: MobileModel = mobile
+        let imgModel : DisplayMobileDetail = imgList[indexPath.row]
+        //            cell.setupUI(mobile: mobileModel, img: imgModel)
+        cell.setupUI(img: imgModel)
+        return cell
+    }
+    
+    
+    
+}
+

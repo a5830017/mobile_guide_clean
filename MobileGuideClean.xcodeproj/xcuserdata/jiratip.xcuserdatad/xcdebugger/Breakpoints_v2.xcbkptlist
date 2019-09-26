@@ -7,198 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FA429E4F-89A1-4B97-B0C1-CAC9FF14B11C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "sortMobile(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FA429E4F-89A1-4B97-B0C1-CAC9FF14B11C - c0272dc8a0b61e85"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "274">
-               </Location>
-               <Location
-                  uuid = "FA429E4F-89A1-4B97-B0C1-CAC9FF14B11C - 4885ad31fbc727de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "023434D8-2160-42F6-8C19-A9D89E91CD07"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "sortMobile(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "023434D8-2160-42F6-8C19-A9D89E91CD07 - c0272dc8a0b61e85"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "920">
-               </Location>
-               <Location
-                  uuid = "023434D8-2160-42F6-8C19-A9D89E91CD07 - ac5c18a195a4ccd9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BDD168BB-882C-4607-B566-F07A02089AD2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "sortMobile(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BDD168BB-882C-4607-B566-F07A02089AD2 - c0272dc8a0b61e85"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "1620">
-               </Location>
-               <Location
-                  uuid = "BDD168BB-882C-4607-B566-F07A02089AD2 - 1696118c3a75d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BA9A5CE1-1644-4BEF-BE95-B1F4FC468FE0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "sortMobile(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BA9A5CE1-1644-4BEF-BE95-B1F4FC468FE0 - c0272dc8a0b61e85"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "2266">
-               </Location>
-               <Location
-                  uuid = "BA9A5CE1-1644-4BEF-BE95-B1F4FC468FE0 - 65e90d81a69f22db"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8EB96746-508B-4DE3-AADD-89373C50EBB2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -206,42 +14,8 @@
             filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "sortMobile(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8EB96746-508B-4DE3-AADD-89373C50EBB2 - c0272dc8a0b61e85"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "2966">
-               </Location>
-               <Location
-                  uuid = "8EB96746-508B-4DE3-AADD-89373C50EBB2 - f9a07b71417ccbda"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
+            startingLineNumber = "125"
+            endingLineNumber = "125">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -254,42 +28,178 @@
             filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0476B91E-03D9-4688-8E88-919D8E74A231"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/DetailCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "setupUI(img:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE27B47B-3219-4502-93F6-55B925498693"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/DetailScene/DetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B73A705-23BB-441B-B6ED-B1813B22B3FD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/DetailScene/DetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "sortMobile(request:)"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "470ED6C5-4CDD-4DAA-9545-CBD55148E886"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/MobileListScene/MobileListPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5B3B255-D55E-4E40-BB27-AA4A059C399E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A96360A0-3832-4A56-ABE5-F114F2C91E64"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DCAB7D6D-F65B-45AD-AAB1-8CCF913F5FF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3523B4DB-D866-44E8-97B5-0F124B153C8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "check(request:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A9770101-BEB6-40ED-A7F6-C3A425E0D4A0 - c0272dc8a0b61e85"
+                  uuid = "3523B4DB-D866-44E8-97B5-0F124B153C8A - be44550db1ca663d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
+                  symbolName = "MobileGuideClean.MobileListInteractor.check(request: MobileGuideClean.MobileList.FeatureMobile.Request) -&gt; ()"
                   moduleName = "MobileGuideClean"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "3591">
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "5365">
                </Location>
                <Location
-                  uuid = "A9770101-BEB6-40ED-A7F6-C3A425E0D4A0 - 5d7af6e17bd270e5"
+                  uuid = "3523B4DB-D866-44E8-97B5-0F124B153C8A - 5c3fce47a5bd0c67"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #6 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.sortMobile(request: MobileGuideClean.MobileList.SortMobile.Request) -&gt; ()"
+                  symbolName = "closure #8 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.check(request: MobileGuideClean.MobileList.FeatureMobile.Request) -&gt; ()"
                   moduleName = "MobileGuideClean"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A22336AE-60BF-4631-9DB8-E37735DCFD5E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "check(request:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

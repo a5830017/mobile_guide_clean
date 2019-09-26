@@ -12,6 +12,7 @@ enum SortType {
     case priceLowToHigh
     case priceHighToLow
     case rating
+    case isDefault
 }
 
 enum SegmentState {

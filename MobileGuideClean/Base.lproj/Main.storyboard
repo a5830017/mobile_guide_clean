@@ -160,7 +160,7 @@
                         <outlet property="segmentControl" destination="fE7-vE-Umx" id="ous-Fd-dRG"/>
                         <outlet property="sortButton" destination="eXa-Ee-vrw" id="cj7-zQ-W1w"/>
                         <outlet property="tableViewMobileList" destination="91r-VD-GB4" id="jDN-5y-TqW"/>
-                        <segue destination="pbe-BM-PIa" kind="show" id="75t-WQ-1Na"/>
+                        <segue destination="pbe-BM-PIa" kind="show" identifier="showDetail" id="75t-WQ-1Na"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3U-Bf-bOw" sceneMemberID="firstResponder"/>

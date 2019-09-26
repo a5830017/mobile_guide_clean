@@ -15,7 +15,6 @@
 		AE24549E233A01CD00E84170 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE24549C233A01CD00E84170 /* LaunchScreen.storyboard */; };
 		AE2454AA233A03E400E84170 /* MobileListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */; };
 		AE2454C7233A05A400E84170 /* MobileListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454BF233A05A400E84170 /* MobileListPresenter.swift */; };
-		AE2454C8233A05A400E84170 /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C0233A05A400E84170 /* MobileListInteractor.swift */; };
 		AE2454C9233A05A400E84170 /* MobileListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C1233A05A400E84170 /* MobileListModels.swift */; };
 		AE2454CA233A05A400E84170 /* MobileListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C2233A05A400E84170 /* MobileListStore.swift */; };
 		AE2454CB233A05A400E84170 /* MobileListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454C3233A05A400E84170 /* MobileListWorker.swift */; };
@@ -32,6 +31,8 @@
 		AE2454E6233BC72500E84170 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DE233BC72500E84170 /* DetailInteractor.swift */; };
 		AE2454E7233BC72500E84170 /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DF233BC72500E84170 /* DetailEntity.swift */; };
 		AE2454E9233C5F9D00E84170 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */; };
+		AE2454FC233C81D700E84170 /* MobileListInteractor----.swi in Sources */ = {isa = PBXBuildFile; fileRef = AE2454FB233C81D700E84170 /* MobileListInteractor----.swi */; };
+		AE2454FE233C81E500E84170 /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454FD233C81E400E84170 /* MobileListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,6 @@
 		AE24549F233A01CD00E84170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListTableViewCell.swift; sourceTree = "<group>"; };
 		AE2454BF233A05A400E84170 /* MobileListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListPresenter.swift; sourceTree = "<group>"; };
-		AE2454C0233A05A400E84170 /* MobileListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListInteractor.swift; sourceTree = "<group>"; };
 		AE2454C1233A05A400E84170 /* MobileListModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListModels.swift; sourceTree = "<group>"; };
 		AE2454C2233A05A400E84170 /* MobileListStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListStore.swift; sourceTree = "<group>"; };
 		AE2454C3233A05A400E84170 /* MobileListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListWorker.swift; sourceTree = "<group>"; };
@@ -62,6 +62,8 @@
 		AE2454DE233BC72500E84170 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		AE2454DF233BC72500E84170 /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
 		AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE2454FB233C81D700E84170 /* MobileListInteractor----.swi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MobileListInteractor----.swi"; sourceTree = "<group>"; };
+		AE2454FD233C81E400E84170 /* MobileListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		AE245490233A01CC00E84170 /* MobileGuideClean */ = {
 			isa = PBXGroup;
 			children = (
+				AE2454EA233C813700E84170 /* scene */,
 				AE2454D7233BC6FC00E84170 /* DetailScene */,
 				AE2454BE233A05A400E84170 /* MobileListScene */,
 				AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */,
@@ -114,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				AE2454BF233A05A400E84170 /* MobileListPresenter.swift */,
-				AE2454C0233A05A400E84170 /* MobileListInteractor.swift */,
+				AE2454FD233C81E400E84170 /* MobileListInteractor.swift */,
 				AE2454C1233A05A400E84170 /* MobileListModels.swift */,
 				AE2454C2233A05A400E84170 /* MobileListStore.swift */,
 				AE2454C3233A05A400E84170 /* MobileListWorker.swift */,
@@ -138,6 +141,14 @@
 				AE2454DF233BC72500E84170 /* DetailEntity.swift */,
 			);
 			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		AE2454EA233C813700E84170 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				AE2454FB233C81D700E84170 /* MobileListInteractor----.swi */,
+			);
+			path = scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 				AE245496233A01CC00E84170 /* ViewController.swift in Sources */,
 				AE2454E7233BC72500E84170 /* DetailEntity.swift in Sources */,
 				AE2454CA233A05A400E84170 /* MobileListStore.swift in Sources */,
+				AE2454FE233C81E500E84170 /* MobileListInteractor.swift in Sources */,
 				AE2454CC233A05A400E84170 /* MobileListRouter.swift in Sources */,
 				AE2454CB233A05A400E84170 /* MobileListWorker.swift in Sources */,
 				AE2454D0233A0DCC00E84170 /* ConstantValue.swift in Sources */,
@@ -227,7 +239,7 @@
 				AE2454E6233BC72500E84170 /* DetailInteractor.swift in Sources */,
 				AE2454E2233BC72500E84170 /* DetailWorker.swift in Sources */,
 				AE245494233A01CC00E84170 /* SceneDelegate.swift in Sources */,
-				AE2454C8233A05A400E84170 /* MobileListInteractor.swift in Sources */,
+				AE2454FC233C81D700E84170 /* MobileListInteractor----.swi in Sources */,
 				AE2454CD233A05A400E84170 /* MobileListViewController.swift in Sources */,
 				AE2454E4233BC72500E84170 /* DetailModels.swift in Sources */,
 				AE2454E3233BC72500E84170 /* DetailRouter.swift in Sources */,
