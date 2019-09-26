@@ -11,7 +11,7 @@ import UIKit
 protocol MobileListViewControllerInterface: class {
     func displaySomething(viewModel: MobileList.GetMobile.ViewModel)
     func displayMobile(viewModel: MobileList.FeatureMobile.ViewModel)
-
+    
     var mobileList: [DisplayMobileList]? { get set }
     var favList: [DisplayMobileList]? { get set }
     var segmentState: SegmentState? { get set }
@@ -63,6 +63,7 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        segmentState = .all
         doSomethingOnLoad()
     }
     
@@ -77,27 +78,27 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     
     // MARK: - Button Click
     @IBAction func didSortButtonTap(_ sender: Any) {
-//        var request = MobileList.FeatureMobile.Request(segmentState: segmentState, sortType: sortType)
+        //        var request = MobileList.FeatureMobile.Request(segmentState: segmentState, sortType: sortType)
         let alertController = UIAlertController(title: "sort", message:
             "", preferredStyle: .alert)
-
+        
         alertController.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: { [weak self] action in
             let request = MobileList.FeatureMobile.Request(segmentState: self?.segmentState ?? .all, sortType: .priceLowToHigh)
             self?.interactor.check(request: request)
-
+            
         }))
         alertController.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: { [weak self] action in
             let request = MobileList.FeatureMobile.Request(segmentState: self?.segmentState ?? .all, sortType: .priceHighToLow)
             self?.interactor.check(request: request)
-
+            
         }))
         alertController.addAction(UIAlertAction(title: "Rating", style: .default, handler: { [weak self] action in
             let request = MobileList.FeatureMobile.Request(segmentState: self?.segmentState ?? .all, sortType: .rating)
             self?.interactor.check(request: request)
-
+            
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
+        
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -110,14 +111,14 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
             segmentState = .all
             let request = MobileList.FeatureMobile.Request(segmentState: .all, sortType: sortType ?? .isDefault)
             self.interactor.check(request: request)
-//            tableViewMobileList.reloadData()
+            //            tableViewMobileList.reloadData()
             
             
         case 1: // Favourite
             segmentState = .favourite
             let request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: sortType ?? .isDefault)
             self.interactor.check(request: request)
-//            tableViewMobileList.reloadData()
+            //            tableViewMobileList.reloadData()
             print("FAV")
             
             
@@ -143,30 +144,30 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
         }
     }
     
-//    var sortedList: [MobileList.SortMobile.ViewModel.DisplayMobileList] = []
+    //    var sortedList: [MobileList.SortMobile.ViewModel.DisplayMobileList] = []
     
     func displayMobile(viewModel: MobileList.FeatureMobile.ViewModel) {
         mobileList = viewModel.content
         tableViewMobileList.reloadData()
     }
     
-//    func displayFavouriteMobile(viewModel: MobileList.SwitchSegment.ViewModel) {
-//        favList = viewModel.content
-//        tableViewMobileList.reloadData()
-//    }
-        
+    //    func displayFavouriteMobile(viewModel: MobileList.SwitchSegment.ViewModel) {
+    //        favList = viewModel.content
+    //        tableViewMobileList.reloadData()
+    //    }
+    
     
     // MARK: - Router
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        router.passDataToNextScene(segue: segue)
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        router.passDataToNextScene(segue: segue)
+    //    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router.passDataToNextScene(segue: segue, sender: sender)
-//    if segue.identifier == "showMobileDetail",
-//        let viewController = segue.destination as? DetailViewController,
-//        let selectedMobile = sender as? MobileModel {
-//        viewController.mobile = selectedMobile
+        //    if segue.identifier == "showMobileDetail",
+        //        let viewController = segue.destination as? DetailViewController,
+        //        let selectedMobile = sender as? MobileModel {
+        //        viewController.mobile = selectedMobile
     }
     
     @IBAction func unwindToMobileListViewController(from segue: UIStoryboardSegue, sender: Any?) {
@@ -176,14 +177,15 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
 }
 
 extension MobileListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if(segmentControl.selectedSegmentIndex == 0) {
-//            return mobileList?.count ?? 0
-//        }
-//        } else {
-//            return favList?.count ?? 0
-//        }
-//        return mobileList?.count ?? []
+        //        if(segmentControl.selectedSegmentIndex == 0) {
+        //            return mobileList?.count ?? 0
+        //        } else {
+        //            return favList?.count ?? 0
+        //        }
+        //    }
+        //        return mobileList?.count ?? []
         return mobileList?.count ?? 0
     }
     
@@ -206,21 +208,24 @@ extension MobileListViewController: UITableViewDataSource {
 
 extension MobileListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(segmentControl.selectedSegmentIndex == 0){
-            guard let sender = mobileList?[indexPath.row] else {
-                return
-            }
-            router.navigateToSomewhere(sender: sender)
-//            performSegue(withIdentifier: tableViewshowDetail, sender: sender)
-        } else {
-            guard let sender = favList?[indexPath.row] else {
-                return
-            }
-            router.navigateToSomewhere(sender: sender)
-//            performSegue(withIdentifier: tableViewshowDetail, sender: sender)
-        }
+        //        if(segmentControl.selectedSegmentIndex == 0){
+        //        if(segmentState == .all){
+        //            guard let sender = mobileList?[indexPath.row] else {
+        //                return
+        //            }
+        //            router.navigateToSomewhere(sender: sender)
+        //            //            performSegue(withIdentifier: tableViewshowDetail, sender: sender)
+        //        } else {
+        //            guard let sender = favList?[indexPath.row] else {
+        //                return
+        //            }
+        //            router.navigateToSomewhere(sender: sender)
+        //            performSegue(withIdentifier: tableViewshowDetail, sender: sender)
+        guard let sender = mobileList?[indexPath.row] else { return }
+        router.navigateToSomewhere(sender: sender)
     }
-    
+}
+
 //    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 //        if segmentState == .all {
 //            return false
@@ -228,7 +233,7 @@ extension MobileListViewController: UITableViewDelegate {
 //            return true
 //        }
 //    }
-//    
+//
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 //            if editingStyle == .delete {
 //                let favId = favList.remove(at: indexPath.row).id
@@ -240,15 +245,13 @@ extension MobileListViewController: UITableViewDelegate {
 //                tableView.deleteRows(at: [indexPath], with: .fade)
 //            }
 //        }
-    
-}
 
 extension MobileListViewController: MobileTableViewCellDelegate {
     func didFavouriteButtonTap(cell: MobileListTableViewCell) {
         guard let index = tableViewMobileList.indexPath(for: cell) else {
             return
         }
-//        mobileList[index.row].isFav = !mobileList[index.row].isFav
+        //        mobileList[index.row].isFav = !mobileList[index.row].isFav
         let request = MobileList.FavId.Request(id: mobileList?[index.row].id ?? 0)
         self.interactor.setFav(request: request)
         
