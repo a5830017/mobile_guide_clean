@@ -93,70 +93,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3523B4DB-D866-44E8-97B5-0F124B153C8A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "check(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3523B4DB-D866-44E8-97B5-0F124B153C8A - be44550db1ca663d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MobileGuideClean.MobileListInteractor.check(request: MobileGuideClean.MobileList.FeatureMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "5365">
-               </Location>
-               <Location
-                  uuid = "3523B4DB-D866-44E8-97B5-0F124B153C8A - 5c3fce47a5bd0c67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #8 (MobileGuideClean.MobileModel, MobileGuideClean.MobileModel) -&gt; Swift.Bool in MobileGuideClean.MobileListInteractor.check(request: MobileGuideClean.MobileList.FeatureMobile.Request) -&gt; ()"
-                  moduleName = "MobileGuideClean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiratip/project_X-code/MobileGuideClean/MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A22336AE-60BF-4631-9DB8-E37735DCFD5E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/MobileListScene/MobileListInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "check(request:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6EB0812F-5F32-4419-B719-9210A86CB0F4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -167,38 +103,6 @@
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "getImgList(url:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A79D0BAF-8C3D-4A0F-A472-ECD8DA622094"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/DetailCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "setupUI(img:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "58ED0964-F734-44FF-92E2-671F61BAC88F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileGuideClean/DetailCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "setupUI(img:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

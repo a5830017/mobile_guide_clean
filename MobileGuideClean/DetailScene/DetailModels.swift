@@ -30,7 +30,7 @@ struct Detail {
     /// Data struct sent to ViewController
     struct ViewModel {
         let content: Result<[DisplayMobileDetail], Error>
-        
+        var mobile: DisplayMobileList
     }
   }
 }

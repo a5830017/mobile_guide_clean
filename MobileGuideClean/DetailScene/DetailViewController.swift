@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     var router: DetailRouter!
     var imgList : [DisplayMobileDetail] = []
     let showDetail: String = "mobileCollectionViewCell"
+    var mobileData: DisplayMobileList?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -64,7 +65,8 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     
     func displaySomething(viewModel: Detail.Something.ViewModel) {
         // NOTE: Display the result from the Presenter
-        
+        let mobile = viewModel.mobile
+        self.mobileData = mobile
         switch viewModel.content {
         case .success(let imgs):
             imgList = imgs
@@ -101,7 +103,8 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
 //        let mobileModel: DisplayMobileList = mobile
         let imgModel : DisplayMobileDetail = imgList[indexPath.row]
         //            cell.setupUI(mobile: mobileModel, img: imgModel)
-        cell.setupUI(img: imgModel)
+        guard let mobile = self.mobileData else { return UICollectionViewCell() }
+        cell.setupUI(img: imgModel, mobile: mobile)
         return cell
     }
     

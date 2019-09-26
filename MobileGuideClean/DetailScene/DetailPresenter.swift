@@ -18,7 +18,7 @@ class DetailPresenter: DetailPresenterInterface {
     // MARK: - Presentation logic
     
     func presentSomething(response: Detail.Something.Response) {
-        
+        let mobileData = response.mobile
         let result: Result<[DisplayMobileDetail], Error>
         
         switch response.result {
@@ -34,14 +34,14 @@ class DetailPresenter: DetailPresenterInterface {
                 return DisplayMobileDetail(url: url, mobileId: mobileId, id: id)
             })
             result = .success(mobileViewModel)
-            let viewModel = Detail.Something.ViewModel(content: result)
+            let viewModel = Detail.Something.ViewModel(content: result, mobile: mobileData)
             viewController.displaySomething(viewModel: viewModel)
         case .failure(let error):
             result = .failure(error)
-            let viewModel = Detail.Something.ViewModel(content: result)
+            let viewModel = Detail.Something.ViewModel(content: result, mobile: mobileData)
             viewController.displaySomething(viewModel: viewModel)
         }
-        let viewModel = Detail.Something.ViewModel(content: result)
+        let viewModel = Detail.Something.ViewModel(content: result, mobile: mobileData)
         viewController.displaySomething(viewModel: viewModel)
         
     }
