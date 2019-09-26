@@ -198,42 +198,29 @@ extension MobileListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.setupUI(mobile: mobile)
-        
-//            if(segmentControl.selectedSegmentIndex == 1){ //fav tab
-//                guard let mobile = favList?[indexPath.row] else {
-//                    return UITableViewCell()
-//                }
-//                cell.setupUI(mobile: mobile)
-//            } else { // all tab
-//                guard let mobile = mobileList?[indexPath.row] else {
-//                    return UITableViewCell()
-//                }
-//                cell.setupUI(mobile: mobile)
-//            }
-        //}
-//        var mobile: DisplayMobileList = mobileList?[indexPath.row]
-//        if(segmentControl.selectedSegmentIndex == 1){
-//            print("fav")
-//            mobile = favList?[indexPath.row] ??
-//        } else {
-//            mobile = mobileList?[indexPath.row] ?? <#default value#>
-//        }
-//        cell.setupUI(mobile: mobile)
         cell.delegate = self
         
         return cell
     }
 }
 
-//extension MobileListViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if(segmentControl.selectedSegmentIndex == 0){
-//            performSegue(withIdentifier: tableViewshowDetail, sender: mobileList[indexPath.row])
-//        } else {
-//            performSegue(withIdentifier: tableViewshowDetail, sender: favList[indexPath.row])
-//        }
-//    }
-//}
+extension MobileListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(segmentControl.selectedSegmentIndex == 0){
+            guard let sender = mobileList?[indexPath.row] else {
+                return
+            }
+            router.navigateToSomewhere(sender: sender)
+//            performSegue(withIdentifier: tableViewshowDetail, sender: sender)
+        } else {
+            guard let sender = favList?[indexPath.row] else {
+                return
+            }
+            router.navigateToSomewhere(sender: sender)
+//            performSegue(withIdentifier: tableViewshowDetail, sender: sender)
+        }
+    }
+}
 
 extension MobileListViewController: MobileTableViewCellDelegate {
     func didFavouriteButtonTap(cell: MobileListTableViewCell) {

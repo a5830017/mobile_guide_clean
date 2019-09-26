@@ -11,20 +11,20 @@ import UIKit
 protocol DetailInteractorInterface {
     func doSomething(request: Detail.Something.Request)
     var model: [ImageModel]? { get }
-    var mobile: MobileModel? { get set }
+    var mobile: DisplayMobileList? { get set }
 }
 
 class DetailInteractor: DetailInteractorInterface {
     var presenter: DetailPresenterInterface!
     var worker: DetailWorker?
     var model: [ImageModel]?
-    var mobile: MobileModel?
-    var mobileId : String = ""
+    var mobile: DisplayMobileList?
+    var mobileId : Int?
     
     // MARK: - Business logic
     
     func doSomething(request: Detail.Something.Request) {
-        mobileId = "\(mobile?.id ?? 1)"
+        guard let mobileId = mobile?.id else { return }
         let url: String = "https://scb-test-mobile.herokuapp.com/api/mobiles/\(mobileId)/images/"
         
         worker?.getImg(url: url) { [weak self] response in
@@ -32,11 +32,13 @@ class DetailInteractor: DetailInteractorInterface {
             case .success(let mobile):
                 self?.model = mobile
                 let result: Result<[ImageModel], Error> = .success(mobile)
-                let response = Detail.Something.Response(result: result)
+                guard let mobileData = self?.mobile else { return }
+                let response = Detail.Something.Response(result: result, mobile: mobileData)
                 self?.presenter.presentSomething(response: response)
             case .failure(let error):
                 let result: Result<[ImageModel], Error> = .failure(error)
-                let response = Detail.Something.Response(result: result)
+                guard let mobileData = self?.mobile else { return }
+                let response = Detail.Something.Response(result: result, mobile: mobileData)
                 self?.presenter.presentSomething(response: response)
                 print(error)
             }

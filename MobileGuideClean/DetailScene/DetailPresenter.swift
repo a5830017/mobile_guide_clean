@@ -34,8 +34,12 @@ class DetailPresenter: DetailPresenterInterface {
                 return DisplayMobileDetail(url: url, mobileId: mobileId, id: id)
             })
             result = .success(mobileViewModel)
+            let viewModel = Detail.Something.ViewModel(content: result)
+            viewController.displaySomething(viewModel: viewModel)
         case .failure(let error):
             result = .failure(error)
+            let viewModel = Detail.Something.ViewModel(content: result)
+            viewController.displaySomething(viewModel: viewModel)
         }
         let viewModel = Detail.Something.ViewModel(content: result)
         viewController.displaySomething(viewModel: viewModel)

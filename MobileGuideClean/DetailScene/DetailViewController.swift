@@ -16,7 +16,7 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     var interactor: DetailInteractorInterface!
     var router: DetailRouter!
     var imgList : [DisplayMobileDetail] = []
-    let showDetail: String = "showDetail"
+    let showDetail: String = "mobileCollectionViewCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -87,17 +87,18 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     }
 }
 
-extension DetailViewController: UICollectionViewDataSource {
+extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imgList.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: showDetail, for: indexPath) as? DetailCollectionViewCell else {
             return UICollectionViewCell()
         }
-        //            let mobileModel: MobileModel = mobile
+//        let mobileModel: DisplayMobileList = mobile
         let imgModel : DisplayMobileDetail = imgList[indexPath.row]
         //            cell.setupUI(mobile: mobileModel, img: imgModel)
         cell.setupUI(img: imgModel)

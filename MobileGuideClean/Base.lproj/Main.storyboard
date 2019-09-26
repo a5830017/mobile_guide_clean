@@ -160,7 +160,6 @@
                         <outlet property="segmentControl" destination="fE7-vE-Umx" id="ous-Fd-dRG"/>
                         <outlet property="sortButton" destination="eXa-Ee-vrw" id="cj7-zQ-W1w"/>
                         <outlet property="tableViewMobileList" destination="91r-VD-GB4" id="jDN-5y-TqW"/>
-                        <segue destination="pbe-BM-PIa" kind="show" identifier="showDetail" id="75t-WQ-1Na"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3U-Bf-bOw" sceneMemberID="firstResponder"/>
@@ -170,14 +169,17 @@
         <!--name-->
         <scene sceneID="4d8-Jq-u87">
             <objects>
-                <viewController id="pbe-BM-PIa" customClass="DetailViewController" customModule="MobileGuideClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="pbe-BM-PIa" customClass="DetailViewController" customModule="MobileGuideClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XII-nb-shQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-uj-xCE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="313.5"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-uj-xCE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="313.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="313.5" id="FuM-yV-W9i"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k0v-ZI-3jK">
                                     <size key="itemSize" width="419" height="290"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -199,11 +201,10 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="odk-oJ-IIL" firstAttribute="height" secondItem="qHu-Sf-K2I" secondAttribute="height" id="5cB-R0-PDx"/>
-                                            <constraint firstItem="odk-oJ-IIL" firstAttribute="width" secondItem="qHu-Sf-K2I" secondAttribute="width" id="9Jz-9U-PFi"/>
-                                            <constraint firstAttribute="trailing" secondItem="odk-oJ-IIL" secondAttribute="trailing" id="Nix-JS-6Y8"/>
+                                            <constraint firstItem="odk-oJ-IIL" firstAttribute="leading" secondItem="qHu-Sf-K2I" secondAttribute="leading" id="Pvx-El-Y54"/>
                                             <constraint firstAttribute="bottom" secondItem="odk-oJ-IIL" secondAttribute="bottom" id="TiA-dD-xlh"/>
                                             <constraint firstItem="odk-oJ-IIL" firstAttribute="top" secondItem="qHu-Sf-K2I" secondAttribute="top" id="bvm-hl-EIM"/>
-                                            <constraint firstItem="odk-oJ-IIL" firstAttribute="leading" secondItem="qHu-Sf-K2I" secondAttribute="leading" id="mYv-OO-ene"/>
+                                            <constraint firstAttribute="trailing" secondItem="odk-oJ-IIL" secondAttribute="trailing" id="otK-fS-SD9"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="detailDescription" destination="vxQ-ch-oFD" id="d34-Ch-PXQ"/>
@@ -214,12 +215,12 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="pbe-BM-PIa" id="i2q-JY-cY6"/>
-                                    <outlet property="delegate" destination="pbe-BM-PIa" id="4S0-5p-EFn"/>
+                                    <outlet property="dataSource" destination="pbe-BM-PIa" id="Grn-CR-csn"/>
+                                    <outlet property="delegate" destination="pbe-BM-PIa" id="jjm-WJ-pCJ"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-ch-oFD">
-                                <rect key="frame" x="8" y="421.5" width="398" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-ch-oFD">
+                                <rect key="frame" x="8" y="377.5" width="398" height="20.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Description">
                                         <attributes>
@@ -230,7 +231,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-5U-XBd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="36.5"/>
+                                <rect key="frame" x="0.0" y="7.5" width="414" height="36.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-Wo-WmE">
                                         <rect key="frame" x="8" y="8" width="49" height="20.5"/>
@@ -271,15 +272,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tfc-uj-xCE" firstAttribute="top" secondItem="xly-FM-g9h" secondAttribute="top" id="BBK-L0-y07"/>
-                            <constraint firstItem="tfc-uj-xCE" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" id="DoJ-HD-cUm"/>
                             <constraint firstItem="xly-FM-g9h" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vxQ-ch-oFD" secondAttribute="bottom" constant="8" id="JmE-R2-A7B"/>
                             <constraint firstItem="vxQ-ch-oFD" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" constant="8" id="Ll7-PH-6PB"/>
-                            <constraint firstItem="tfc-uj-xCE" firstAttribute="trailing" secondItem="xly-FM-g9h" secondAttribute="trailing" id="MMM-s5-vYx"/>
-                            <constraint firstItem="tfc-uj-xCE" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" id="S83-gZ-HVE"/>
+                            <constraint firstItem="tfc-uj-xCE" firstAttribute="top" secondItem="wcZ-5U-XBd" secondAttribute="bottom" id="P1A-mW-Udr"/>
+                            <constraint firstItem="tfc-uj-xCE" firstAttribute="trailing" secondItem="xly-FM-g9h" secondAttribute="trailing" id="W1O-7f-NaE"/>
                             <constraint firstItem="wcZ-5U-XBd" firstAttribute="trailing" secondItem="xly-FM-g9h" secondAttribute="trailing" id="Wj5-nP-ewX"/>
+                            <constraint firstItem="tfc-uj-xCE" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" id="XEK-Us-KFB"/>
                             <constraint firstItem="wcZ-5U-XBd" firstAttribute="leading" secondItem="xly-FM-g9h" secondAttribute="leading" id="haR-Dp-sHW"/>
-                            <constraint firstItem="tfc-uj-xCE" firstAttribute="trailing" secondItem="xly-FM-g9h" secondAttribute="trailing" id="lK0-K2-oQk"/>
-                            <constraint firstItem="wcZ-5U-XBd" firstAttribute="top" secondItem="xly-FM-g9h" secondAttribute="top" id="s3u-1e-GZn"/>
                             <constraint firstItem="xly-FM-g9h" firstAttribute="trailing" secondItem="vxQ-ch-oFD" secondAttribute="trailing" constant="8" id="uOE-EK-bwt"/>
                             <constraint firstItem="vxQ-ch-oFD" firstAttribute="top" secondItem="tfc-uj-xCE" secondAttribute="bottom" constant="20" id="v9c-Eb-zJg"/>
                         </constraints>

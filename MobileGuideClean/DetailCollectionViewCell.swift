@@ -22,7 +22,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
 //            detailPrice.text = "Price : $" + String(mobile.price)
     //        mobileImageView.kf.setImage(with: URL(string: img.url))
         detailDescription.text = "mobile id \(img.mobileId)"
-            let url = URL(string: img.url)
+//            let url = URL(string: img.url)
 //            let image = UIImage(named: "placeholder_phone")
 //            mobileImageView.kf.setImage(with: url, placeholder: image)
             
