@@ -30,13 +30,14 @@ class MobileListPresenter: MobileListPresenterInterface {
             var mobileViewModel: [DisplayMobileList] = []
             mobileViewModel = mobiles.map({ (mobile) -> DisplayMobileList in
                 let name = mobile.name
-                //                let price = "price : $\(mobile.price)"
-                //                let rating = "rating : \(mobile.rating)"
+                let url = mobile.thumbImageURL
+                let brand = mobile.brand
                 let price = "price : $\(mobile.price)"
                 let rating = "rating : \(mobile.rating)"
                 let isFav = mobile.isFavourite ?? false
                 let id = mobile.id
-                return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)
+                let desc = mobile.description
+                return DisplayMobileList(thumbImageURL: url, brand: brand, price: price, description: desc, name: name, rating: rating, isFav: isFav, id: id)
             })
             //            for mobile in mobiles{
             //                let name = mobile.name
@@ -61,11 +62,12 @@ class MobileListPresenter: MobileListPresenterInterface {
             let name = mobile.name
             let price = "price : $\(mobile.price)"
             let rating = "rating : \(mobile.rating)"
-            //            let price = "\(mobile.price)"
-            //            let rating = "\(mobile.rating)"
+            let url = mobile.thumbImageURL
+            let brand = mobile.brand
             let isFav = mobile.isFavourite ?? false
             let id = mobile.id
-            return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)
+            let desc = mobile.description
+            return DisplayMobileList(thumbImageURL: url, brand: brand, price: price, description: desc, name: name, rating: rating, isFav: isFav, id: id)
         })
         let viewModel = MobileList.FeatureMobile.ViewModel(content: mobileList)
         viewController.displayMobile(viewModel: viewModel)
