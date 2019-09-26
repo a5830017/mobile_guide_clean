@@ -8,14 +8,25 @@
 
 import UIKit
 
+struct DisplayMobileDetail {
+    let url : String
+    let mobileId : Int
+    let id : Int
+//    let name : String
+}
+
 struct Detail {
   /// This structure represents a use case
   struct Something {
     /// Data struct sent to Interactor
     struct Request {}
     /// Data struct sent to Presenter
-    struct Response {}
+    struct Response {
+        let result: Result<[ImageModel], Error>
+    }
     /// Data struct sent to ViewController
-    struct ViewModel {}
+    struct ViewModel {
+        let content: Result<[DisplayMobileDetail], Error>
+    }
   }
 }

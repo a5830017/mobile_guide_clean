@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailStoreProtocol {
-  func getData(_ completion: @escaping (Result<Entity>) -> Void)
+    func getImgList(url: String, _ completion: @escaping (Result<[ImageModel], Error>) -> Void)
 }
 
 class DetailWorker {
@@ -22,11 +22,10 @@ class DetailWorker {
 
   // MARK: - Business Logic
 
-  func doSomeWork(_ completion: @escaping (Result<Entity>) -> Void) {
+  func getImg(url: String, _ completion: @escaping (Result<[ImageModel], Error>) -> Void) {
     // NOTE: Do the work
-    store.getData {
-      // The worker may perform some small business logic before returning the result to the Interactor
-      completion($0)
+    store.getImgList(url: url) { result in
+        completion(result)
     }
   }
 }

@@ -9,18 +9,36 @@
 import UIKit
 
 protocol DetailPresenterInterface {
-  func presentSomething(response: Detail.Something.Response)
+    func presentSomething(response: Detail.Something.Response)
 }
 
 class DetailPresenter: DetailPresenterInterface {
-  weak var viewController: DetailViewControllerInterface!
-
-  // MARK: - Presentation logic
-
-  func presentSomething(response: Detail.Something.Response) {
-    // NOTE: Format the response from the Interactor and pass the result back to the View Controller. The resulting view model should be using only primitive types. Eg: the view should not need to involve converting date object into a formatted string. The formatting is done here.
-
-    let viewModel = Detail.Something.ViewModel()
-    viewController.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: DetailViewControllerInterface!
+    
+    // MARK: - Presentation logic
+    
+    func presentSomething(response: Detail.Something.Response) {
+        
+        let result: Result<[DisplayMobileDetail], Error>
+        
+        switch response.result {
+        case .success(let mobiles):
+            var mobileViewModel: [DisplayMobileDetail] = []
+            mobileViewModel = mobiles.map({ (mobile) -> DisplayMobileDetail in
+                //                    let name = mobile.name
+                //                    let price = "\(mobile.price)"
+                //                    let rating = "\(mobile.rating)"
+                let url = mobile.url
+                let id = mobile.id
+                let mobileId = mobile.mobileId
+                return DisplayMobileDetail(url: url, mobileId: mobileId, id: id)
+            })
+            result = .success(mobileViewModel)
+        case .failure(let error):
+            result = .failure(error)
+        }
+        let viewModel = Detail.Something.ViewModel(content: result)
+        viewController.displaySomething(viewModel: viewModel)
+        
+    }
 }
