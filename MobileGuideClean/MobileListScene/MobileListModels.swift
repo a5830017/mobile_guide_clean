@@ -78,14 +78,9 @@ struct MobileList {
             var isFav: Bool
         }
         /// Data struct sent to Presenter
-        struct Response {
-//            let result: [MobileModel]
-        }
+        struct Response {}
         /// Data struct sent to ViewController
-        struct ViewModel {
-//            let content: [DisplayMobileList]
-            
-        }
+        struct ViewModel {}
     }
     
 }

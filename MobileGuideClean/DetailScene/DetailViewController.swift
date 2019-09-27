@@ -56,8 +56,6 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     // MARK: - Event handling
     
     func doSomethingOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        
         let request = Detail.Something.Request()
         interactor.doSomething(request: request)
     }
@@ -65,7 +63,6 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     // MARK: - Display logic
     
     func displaySomething(viewModel: Detail.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
         let mobile = viewModel.mobile
         self.mobileData = mobile
         switch viewModel.content {
@@ -108,10 +105,7 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: showDetail, for: indexPath) as? DetailCollectionViewCell else {
             return UICollectionViewCell()
         }
-//        let mobileModel: DisplayMobileList = mobile
-        
         let imgModel : DisplayMobileDetail = imgList[indexPath.row]
-        //            cell.setupUI(mobile: mobileModel, img: imgModel)
         guard let mobile = self.mobileData else { return UICollectionViewCell() }
         cell.setupUI(img: imgModel, mobile: mobile)
         self.navigationItem.title = "\(mobile.name)"

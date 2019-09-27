@@ -12,7 +12,6 @@ struct DisplayMobileDetail {
     let url : String
     let mobileId : Int
     let id : Int
-//    let name : String
 }
 
 struct Detail {

@@ -23,7 +23,6 @@ class DetailWorker {
   // MARK: - Business Logic
 
   func getImg(url: String, _ completion: @escaping (Result<[ImageModel], Error>) -> Void) {
-    // NOTE: Do the work
     store.getImgList(url: url) { result in
         completion(result)
     }

@@ -25,9 +25,6 @@ class DetailPresenter: DetailPresenterInterface {
         case .success(let mobiles):
             var mobileViewModel: [DisplayMobileDetail] = []
             mobileViewModel = mobiles.map({ (mobile) -> DisplayMobileDetail in
-                //                    let name = mobile.name
-                //                    let price = "\(mobile.price)"
-                //                    let rating = "\(mobile.rating)"
                 let url = mobile.url
                 let id = mobile.id
                 let mobileId = mobile.mobileId

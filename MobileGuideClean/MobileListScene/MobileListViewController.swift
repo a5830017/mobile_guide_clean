@@ -73,8 +73,6 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     // MARK: - Event handling
     
     func doSomethingOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        
         let request = MobileList.GetMobile.Request()
         interactor.doSomething(request: request)
     }
@@ -129,7 +127,6 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     // MARK: - Display logic
     
     func displaySomething(viewModel: MobileList.GetMobile.ViewModel) {
-        // NOTE: Display the result from the Presenter
         switch viewModel.content {
         case .success(let mobiles):
             mobileList = mobiles
@@ -205,14 +202,7 @@ extension MobileListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            //tableView.deleteRows(at: [indexPath], with: .fade)
             let rmId = mobileList?.remove(at: indexPath.row).id
-//            guard let model = mobileList,
-//                let index = model.firstIndex(where: { $0.id == favId}) else {
-//                    return
-//            }
-//            let rm = mobileList?.remove(at: index)
-            //mobileList?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             let request = MobileList.rmId.Request(id: rmId ?? 0, isFav: false)
             self.interactor.removeFav(request: request)

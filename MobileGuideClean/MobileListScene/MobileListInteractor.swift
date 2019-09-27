@@ -13,7 +13,6 @@ protocol MobileListInteractorInterface {
     func check(request: MobileList.FeatureMobile.Request)
     func removeFav(request: MobileList.rmId.Request)
     func setFav(request: MobileList.FavId.Request)
-    //    var model: [MobileModel]? { get }
     var mobileList: [MobileModel]? { get set }
     var favList: [MobileModel]? { get set }
     var segmentState: SegmentState? { get set }
@@ -32,14 +31,13 @@ class MobileListInteractor: MobileListInteractorInterface {
     var url: String = "https://scb-test-mobile.herokuapp.com/api/mobiles/"
     var segmentState: SegmentState?
     var sortType: SortType?
-    //    var dict: Dictionary?
+    
     // MARK: - Business logic
     
     func doSomething(request: MobileList.GetMobile.Request) {
         worker?.getMobileList(url: url) { [weak self] response in
             switch response {
             case .success(let mobile):
-                //                self?.model = mobile
                 self?.mobileList = mobile
                 let result: Result<[MobileModel], Error> = .success(mobile)
                 let response = MobileList.GetMobile.Response(result: result)
@@ -58,7 +56,6 @@ class MobileListInteractor: MobileListInteractorInterface {
             let index = model.firstIndex(where: { $0.id == request.id }) else {
                 return
         }
-        //        let index = mobileList.firstIndex(where: { $0.id == request.id })
         guard let isFavChange = mobileList?[index].isFavourite else {
             return
         }
@@ -121,16 +118,9 @@ class MobileListInteractor: MobileListInteractorInterface {
             let response = MobileList.FeatureMobile.Response(result: favList ?? [])
             self.presenter.presentFeature(response: response)
         }
-        
-        
     }
-    
-    //    func checkSort(request: MobileList.FeatureMobile.Request){
-    //        sortType = request.sortType
-    //    }
     
     func filterFav() {
         favList = mobileList?.filter { $0.isFavourite! == true }
     }
-    
 }

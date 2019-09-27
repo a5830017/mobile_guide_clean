@@ -12,8 +12,6 @@ protocol MobileListPresenterInterface {
     func presentSomething(response: MobileList.GetMobile.Response)
     func presentFeature(response: MobileList.FeatureMobile.Response)
     func presentRemove(response: MobileList.FeatureMobile.Response)
-    //    func presentMobile(response: MobileList.FeatureMobile.Response)
-    //    func presentFavouriteMobile(response: MobileList.FeatureMobile.Response)
 }
 
 class MobileListPresenter: MobileListPresenterInterface {
@@ -40,15 +38,6 @@ class MobileListPresenter: MobileListPresenterInterface {
                 let desc = mobile.description
                 return DisplayMobileList(thumbImageURL: url, brand: brand, price: price, description: desc, name: name, rating: rating, isFav: isFav, id: id)
             })
-            //            for mobile in mobiles{
-            //                let name = mobile.name
-            //                let price = "price : $\(mobile.price)"
-            //                let rating = "rating : \(mobile.rating)"
-            //
-            //                let setToMobileViewModel = DisplayMobileList(price: price, name: name, rating: rating)
-            //
-            //                mobileViewModel.append(setToMobileViewModel)
-            //            }
             result = .success(mobileViewModel)
         case .failure(let error):
             result = .failure(error)
