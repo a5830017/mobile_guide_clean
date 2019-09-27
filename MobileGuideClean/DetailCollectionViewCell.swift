@@ -17,8 +17,8 @@ class DetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var mobileImageView: UIImageView!
     
     func setupUI(img : DisplayMobileDetail, mobile: DisplayMobileList){
-        detailRating.text = "Rating : \(mobile.rating)"
-        detailPrice.text = "Price : $\(mobile.price)"
+        detailRating.text = "\(mobile.rating)"
+        detailPrice.text = "\(mobile.price)"
         detailDescription.text = "\(mobile.description)"
         let url = URL(string: img.url)
         let image = UIImage(named: "placeholder_phone")
