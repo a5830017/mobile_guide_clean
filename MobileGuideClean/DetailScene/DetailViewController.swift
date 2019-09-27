@@ -18,6 +18,7 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     var imgList : [DisplayMobileDetail] = []
     let showDetail: String = "mobileCollectionViewCell"
     var mobileData: DisplayMobileList?
+    var error: Error?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -74,6 +75,13 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
             
         case .failure(let error):
             print(error)
+            self.error = error
+            if self.error == nil {
+                let alertController = UIAlertController(title: "Error", message:
+                "Cannot Load Data", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "close", style: .cancel))
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -108,11 +116,5 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         cell.setupUI(img: imgModel, mobile: mobile)
         self.navigationItem.title = "\(mobile.name)"
         return cell
-    }
-}
-
-extension DetailViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height * 0.35)
     }
 }
