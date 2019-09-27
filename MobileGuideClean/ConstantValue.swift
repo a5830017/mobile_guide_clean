@@ -19,3 +19,8 @@ enum SegmentState {
     case all
     case favourite
 }
+
+enum errorCheck {
+    case error
+    case noError
+}
