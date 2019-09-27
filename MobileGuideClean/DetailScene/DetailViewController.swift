@@ -92,6 +92,7 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
 
 extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        getImgDataFromApiOnLoad()
         return imgList.count
     }
     
