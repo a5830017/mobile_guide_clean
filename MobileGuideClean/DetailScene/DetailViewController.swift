@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailViewControllerInterface: class {
-    func displaySomething(viewModel: Detail.Something.ViewModel)
+    func displayImgFromApi(viewModel: Detail.Something.ViewModel)
 }
 
 class DetailViewController: UIViewController, DetailViewControllerInterface {
@@ -18,7 +18,6 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     var imgList : [DisplayMobileDetail] = []
     let showDetail: String = "mobileCollectionViewCell"
     var mobileData: DisplayMobileList?
-    var error: Error?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -50,19 +49,19 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomethingOnLoad()
+        getImgDataFromApiOnLoad()
     }
     
     // MARK: - Event handling
     
-    func doSomethingOnLoad() {
+    func getImgDataFromApiOnLoad() {
         let request = Detail.Something.Request()
-        interactor.doSomething(request: request)
+        interactor.getImgData(request: request)
     }
     
     // MARK: - Display logic
     
-    func displaySomething(viewModel: Detail.Something.ViewModel) {
+    func displayImgFromApi(viewModel: Detail.Something.ViewModel) {
         let mobile = viewModel.mobile
         self.mobileData = mobile
         switch viewModel.content {
@@ -72,15 +71,12 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
             
         case .failure(let error):
             print(error)
-            self.error = error
-            if self.error == nil {
-                let alertController = UIAlertController(title: "Error", message:
-                "Cannot Load Data", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "close", style: .cancel))
-                self.present(alertController, animated: true, completion: nil)
+            let alertController = UIAlertController(title: "Error", message: "Cannot Load Data", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "close", style: .cancel))
+            self.present(alertController, animated: true, completion: nil)
             }
         }
-    }
+    
     
     // MARK: - Router
     

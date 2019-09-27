@@ -16,8 +16,11 @@ class DetailStore: DetailStoreProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let _ = error {
+            if let apiError = error {
                 print("error")
+                DispatchQueue.main.async {
+                    completion(Result.failure(apiError))
+                }
             } else if let data = data, let response = response as? HTTPURLResponse {
                 if response.statusCode == 200 {
                     do {
