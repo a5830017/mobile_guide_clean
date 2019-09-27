@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MobileListRouterInput {
-    func navigateToSomewhere(sender: DisplayMobileList )
+    func navigateToDetailScene(sender: DisplayMobileList )
 }
 
 class MobileListRouter: MobileListRouterInput {
@@ -17,7 +17,7 @@ class MobileListRouter: MobileListRouterInput {
     
     // MARK: - Navigation
     
-    func navigateToSomewhere(sender: DisplayMobileList) {
+    func navigateToDetailScene(sender: DisplayMobileList) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let DetailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         let selectedMobile = sender //as? MobileModel

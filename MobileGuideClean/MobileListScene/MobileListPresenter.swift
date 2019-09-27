@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MobileListPresenterInterface {
-    func presentSomething(response: MobileList.GetMobile.Response)
+    func presentDataFromApi(response: MobileList.GetMobile.Response)
     func presentFeature(response: MobileList.FeatureMobile.Response)
     func presentRemove(response: MobileList.FeatureMobile.Response)
 }
@@ -21,7 +21,7 @@ class MobileListPresenter: MobileListPresenterInterface {
     
     // MARK: - Presentation logic
     
-    func presentSomething(response: MobileList.GetMobile.Response) {
+    func presentDataFromApi(response: MobileList.GetMobile.Response) {
         let result: Result<[DisplayMobileList], Error>
         
         switch response.result {
@@ -43,7 +43,7 @@ class MobileListPresenter: MobileListPresenterInterface {
             result = .failure(error)
         }
         let viewModel = MobileList.GetMobile.ViewModel(content: result)
-        viewController.displaySomething(viewModel: viewModel)
+        viewController.displayMobileApi(viewModel: viewModel)
     }
     
     func presentFeature(response: MobileList.FeatureMobile.Response) {

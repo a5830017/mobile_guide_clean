@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MobileListInteractorInterface {
-    func doSomething(request: MobileList.GetMobile.Request)
+    func getMobileListApi(request: MobileList.GetMobile.Request)
     func check(request: MobileList.FeatureMobile.Request)
     func removeFav(request: MobileList.rmId.Request)
     func setFav(request: MobileList.FavId.Request)
@@ -34,18 +34,18 @@ class MobileListInteractor: MobileListInteractorInterface {
     
     // MARK: - Business logic
     
-    func doSomething(request: MobileList.GetMobile.Request) {
+    func getMobileListApi(request: MobileList.GetMobile.Request) {
         worker?.getMobileList(url: url) { [weak self] response in
             switch response {
             case .success(let mobile):
                 self?.mobileList = mobile
                 let result: Result<[MobileModel], Error> = .success(mobile)
                 let response = MobileList.GetMobile.Response(result: result)
-                self?.presenter.presentSomething(response: response)
+                self?.presenter.presentDataFromApi(response: response)
             case .failure(let error):
                 let result: Result<[MobileModel], Error> = .failure(error)
                 let response = MobileList.GetMobile.Response(result: result)
-                self?.presenter.presentSomething(response: response)
+                self?.presenter.presentDataFromApi(response: response)
                 print(error)
             }
         }

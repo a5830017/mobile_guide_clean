@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailInteractorInterface {
-    func doSomething(request: Detail.Something.Request)
+    func getImgData(request: Detail.Something.Request)
     var model: [ImageModel]? { get }
     var mobile: DisplayMobileList? { get set }
 }
@@ -23,7 +23,7 @@ class DetailInteractor: DetailInteractorInterface {
     
     // MARK: - Business logic
     
-    func doSomething(request: Detail.Something.Request) {
+    func getImgData(request: Detail.Something.Request) {
         guard let mobileId = mobile?.id else { return }
         let url: String = "https://scb-test-mobile.herokuapp.com/api/mobiles/\(mobileId)/images/"
         
@@ -34,12 +34,12 @@ class DetailInteractor: DetailInteractorInterface {
                 let result: Result<[ImageModel], Error> = .success(mobile)
                 guard let mobileData = self?.mobile else { return }
                 let response = Detail.Something.Response(result: result, mobile: mobileData)
-                self?.presenter.presentSomething(response: response)
+                self?.presenter.presentImg(response: response)
             case .failure(let error):
                 let result: Result<[ImageModel], Error> = .failure(error)
                 guard let mobileData = self?.mobile else { return }
                 let response = Detail.Something.Response(result: result, mobile: mobileData)
-                self?.presenter.presentSomething(response: response)
+                self?.presenter.presentImg(response: response)
                 print(error)
             }
         }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MobileListViewControllerInterface: class {
-    func displaySomething(viewModel: MobileList.GetMobile.ViewModel)
+    func displayMobileApi(viewModel: MobileList.GetMobile.ViewModel)
     func displayMobile(viewModel: MobileList.FeatureMobile.ViewModel)
     func displayRemoveMobile(viewModel: MobileList.FeatureMobile.ViewModel)
     
@@ -34,7 +34,6 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     var favList: [DisplayMobileList]?
     var segmentState: SegmentState?
     var sortType: SortType?
-    var rmIndexPath: IndexPath?
     
     
     // MARK: - Object lifecycle
@@ -66,15 +65,15 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentState = .all
-        doSomethingOnLoad()
+        getDataFromApiOnLoad()
         
     }
     
     // MARK: - Event handling
     
-    func doSomethingOnLoad() {
+    func getDataFromApiOnLoad() {
         let request = MobileList.GetMobile.Request()
-        interactor.doSomething(request: request)
+        interactor.getMobileListApi(request: request)
     }
     
     // MARK: - Button Click
@@ -126,7 +125,7 @@ class MobileListViewController: UIViewController, MobileListViewControllerInterf
     
     // MARK: - Display logic
     
-    func displaySomething(viewModel: MobileList.GetMobile.ViewModel) {
+    func displayMobileApi(viewModel: MobileList.GetMobile.ViewModel) {
         switch viewModel.content {
         case .success(let mobiles):
             mobileList = mobiles
@@ -188,7 +187,7 @@ extension MobileListViewController: UITableViewDataSource {
 extension MobileListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let sender = mobileList?[indexPath.row] else { return }
-        router.navigateToSomewhere(sender: sender)
+        router.navigateToDetailScene(sender: sender)
     }
     
     
@@ -211,7 +210,6 @@ extension MobileListViewController: UITableViewDelegate {
         
     }
 }
-
 
 extension MobileListViewController: MobileTableViewCellDelegate {
     func didFavouriteButtonTap(cell: MobileListTableViewCell) {

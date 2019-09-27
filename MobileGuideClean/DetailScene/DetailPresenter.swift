@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailPresenterInterface {
-    func presentSomething(response: Detail.Something.Response)
+    func presentImg(response: Detail.Something.Response)
 }
 
 class DetailPresenter: DetailPresenterInterface {
@@ -17,7 +17,7 @@ class DetailPresenter: DetailPresenterInterface {
     
     // MARK: - Presentation logic
     
-    func presentSomething(response: Detail.Something.Response) {
+    func presentImg(response: Detail.Something.Response) {
         let mobileData = response.mobile
         let result: Result<[DisplayMobileDetail], Error>
         
@@ -32,14 +32,14 @@ class DetailPresenter: DetailPresenterInterface {
             })
             result = .success(mobileViewModel)
             let viewModel = Detail.Something.ViewModel(content: result, mobile: mobileData)
-            viewController.displaySomething(viewModel: viewModel)
+            viewController.displayImgFromApi(viewModel: viewModel)
         case .failure(let error):
             result = .failure(error)
             let viewModel = Detail.Something.ViewModel(content: result, mobile: mobileData)
-            viewController.displaySomething(viewModel: viewModel)
+            viewController.displayImgFromApi(viewModel: viewModel)
         }
         let viewModel = Detail.Something.ViewModel(content: result, mobile: mobileData)
-        viewController.displaySomething(viewModel: viewModel)
+        viewController.displayImgFromApi(viewModel: viewModel)
         
     }
 }
