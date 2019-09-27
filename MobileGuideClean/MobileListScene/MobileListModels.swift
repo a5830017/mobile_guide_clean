@@ -71,4 +71,21 @@ struct MobileList {
         }
     }
     
+    struct rmId {
+        /// Data struct sent to Interactor
+        struct Request {
+            var id: Int
+            var isFav: Bool
+        }
+        /// Data struct sent to Presenter
+        struct Response {
+//            let result: [MobileModel]
+        }
+        /// Data struct sent to ViewController
+        struct ViewModel {
+//            let content: [DisplayMobileList]
+            
+        }
+    }
+    
 }

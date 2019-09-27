@@ -11,6 +11,7 @@ import UIKit
 protocol MobileListPresenterInterface {
     func presentSomething(response: MobileList.GetMobile.Response)
     func presentFeature(response: MobileList.FeatureMobile.Response)
+    func presentRemove(response: MobileList.FeatureMobile.Response)
     //    func presentMobile(response: MobileList.FeatureMobile.Response)
     //    func presentFavouriteMobile(response: MobileList.FeatureMobile.Response)
 }
@@ -72,50 +73,22 @@ class MobileListPresenter: MobileListPresenterInterface {
         let viewModel = MobileList.FeatureMobile.ViewModel(content: mobileList)
         viewController.displayMobile(viewModel: viewModel)
         
+    }
+    func presentRemove(response: MobileList.FeatureMobile.Response) {
+            let result = response.result
+            mobileList = result.map({ (mobile) -> DisplayMobileList in
+                let name = mobile.name
+                let price = "price : $\(mobile.price)"
+                let rating = "rating : \(mobile.rating)"
+                let url = mobile.thumbImageURL
+                let brand = mobile.brand
+                let isFav = mobile.isFavourite ?? false
+                let id = mobile.id
+                let desc = mobile.description
+                return DisplayMobileList(thumbImageURL: url, brand: brand, price: price, description: desc, name: name, rating: rating, isFav: isFav, id: id)
+            })
+            let viewModel = MobileList.FeatureMobile.ViewModel(content: mobileList)
+            viewController.displayRemoveMobile(viewModel: viewModel)
+            
+    }
 }
-}
-
-//    func presentMobile(response: MobileList.SortMobile.Response) {
-//        let sorted = response.result
-//        var sortedMobile: [DisplayMobileList] = []
-//        sortedMobile = sorted.map({ (mobile) -> DisplayMobileList in
-//            let name = mobile.name
-//            let price = "price : $\(mobile.price)"
-//            let rating = "rating : \(mobile.rating)"
-////            let price = "\(mobile.price)"
-////            let rating = "\(mobile.rating)"
-//            let isFav = mobile.isFavourite ?? false
-//            let id = mobile.id
-//            return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)
-//        })
-//        //        for mobile in sorted {
-////            let name = mobile.name
-////            let price = "price : $\(mobile.price)"
-////            let rating = "rating : \(mobile.rating)"
-////            let isFav = mobile.isFav
-////
-////            let setToSortViewModel = DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav)
-////
-////            sortedMobile.append(setToSortViewModel)
-////        }
-//        mobileList = sortedMobile
-//        let viewModel = MobileList.SortMobile.ViewModel(content: mobileList)
-//        viewController.displayMobile(viewModel: viewModel)
-//    }
-//
-//    func presentFavouriteMobile(response: MobileList.SwitchSegment.Response) {
-//        let fav = response.result
-//        var favList: [DisplayMobileList] = []
-//        favList = fav.map({ (mobile) -> DisplayMobileList in
-//            let name = mobile.name
-//            let price = "price : $\(mobile.price)"
-//            let rating = "rating : \(mobile.rating)"
-//            let isFav = mobile.isFavourite ?? false
-//            let id = mobile.id
-//            return DisplayMobileList(price: price, name: name, rating: rating, isFav: isFav, id: id)
-//        })
-//        mobileList = favList
-//        let viewModel = MobileList.SwitchSegment.ViewModel(content: mobileList)
-//        viewController.displayFavouriteMobile(viewModel: viewModel)
-//    }
-//}
