@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,7 +31,6 @@
 		AE2454E6233BC72500E84170 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DE233BC72500E84170 /* DetailInteractor.swift */; };
 		AE2454E7233BC72500E84170 /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DF233BC72500E84170 /* DetailEntity.swift */; };
 		AE2454E9233C5F9D00E84170 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */; };
-		AE2454FC233C81D700E84170 /* MobileListInteractor----.swi in Sources */ = {isa = PBXBuildFile; fileRef = AE2454FB233C81D700E84170 /* MobileListInteractor----.swi */; };
 		AE2454FE233C81E500E84170 /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454FD233C81E400E84170 /* MobileListInteractor.swift */; };
 		B709DA7714B420D9BEA61DC4 /* Pods_MobileGuideClean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B82A7D9184258C16887F2E /* Pods_MobileGuideClean.framework */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		AE2454DE233BC72500E84170 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		AE2454DF233BC72500E84170 /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
 		AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
-		AE2454FB233C81D700E84170 /* MobileListInteractor----.swi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MobileListInteractor----.swi"; sourceTree = "<group>"; };
 		AE2454FD233C81E400E84170 /* MobileListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +86,6 @@
 				7BB77BE90F66E6C365058790 /* Pods-MobileGuideClean.debug.xcconfig */,
 				9BD365E83095CCE548E4B519 /* Pods-MobileGuideClean.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,7 +118,6 @@
 		AE245490233A01CC00E84170 /* MobileGuideClean */ = {
 			isa = PBXGroup;
 			children = (
-				AE2454EA233C813700E84170 /* scene */,
 				AE2454D7233BC6FC00E84170 /* DetailScene */,
 				AE2454BE233A05A400E84170 /* MobileListScene */,
 				AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */,
@@ -166,14 +162,6 @@
 				AE2454DF233BC72500E84170 /* DetailEntity.swift */,
 			);
 			path = DetailScene;
-			sourceTree = "<group>";
-		};
-		AE2454EA233C813700E84170 /* scene */ = {
-			isa = PBXGroup;
-			children = (
-				AE2454FB233C81D700E84170 /* MobileListInteractor----.swi */,
-			);
-			path = scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +296,6 @@
 				AE2454E6233BC72500E84170 /* DetailInteractor.swift in Sources */,
 				AE2454E2233BC72500E84170 /* DetailWorker.swift in Sources */,
 				AE245494233A01CC00E84170 /* SceneDelegate.swift in Sources */,
-				AE2454FC233C81D700E84170 /* MobileListInteractor----.swi in Sources */,
 				AE2454CD233A05A400E84170 /* MobileListViewController.swift in Sources */,
 				AE2454E4233BC72500E84170 /* DetailModels.swift in Sources */,
 				AE2454E3233BC72500E84170 /* DetailRouter.swift in Sources */,
