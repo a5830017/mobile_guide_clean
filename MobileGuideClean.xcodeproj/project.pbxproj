@@ -32,8 +32,21 @@
 		AE2454E7233BC72500E84170 /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454DF233BC72500E84170 /* DetailEntity.swift */; };
 		AE2454E9233C5F9D00E84170 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */; };
 		AE2454FE233C81E500E84170 /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2454FD233C81E400E84170 /* MobileListInteractor.swift */; };
+		AE77DAAA2341ACBE002508EB /* MobileGuideCleanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77DAA92341ACBE002508EB /* MobileGuideCleanTests.swift */; };
+		AE77DAB32341ACD4002508EB /* MobileListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77DAB12341ACD4002508EB /* MobileListInteractorTests.swift */; };
+		AE77DAB42341ACD4002508EB /* MobileListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77DAB22341ACD4002508EB /* MobileListPresenterTests.swift */; };
 		B709DA7714B420D9BEA61DC4 /* Pods_MobileGuideClean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B82A7D9184258C16887F2E /* Pods_MobileGuideClean.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE77DAAC2341ACBE002508EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE245486233A01CC00E84170 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE24548D233A01CC00E84170;
+			remoteInfo = MobileGuideClean;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		51B82A7D9184258C16887F2E /* Pods_MobileGuideClean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileGuideClean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +79,11 @@
 		AE2454DF233BC72500E84170 /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
 		AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE2454FD233C81E400E84170 /* MobileListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListInteractor.swift; sourceTree = "<group>"; };
+		AE77DAA72341ACBE002508EB /* MobileGuideCleanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileGuideCleanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE77DAA92341ACBE002508EB /* MobileGuideCleanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileGuideCleanTests.swift; sourceTree = "<group>"; };
+		AE77DAAB2341ACBE002508EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE77DAB12341ACD4002508EB /* MobileListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListInteractorTests.swift; sourceTree = "<group>"; };
+		AE77DAB22341ACD4002508EB /* MobileListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B709DA7714B420D9BEA61DC4 /* Pods_MobileGuideClean.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE77DAA42341ACBE002508EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				AE245490233A01CC00E84170 /* MobileGuideClean */,
+				AE77DAA82341ACBE002508EB /* MobileGuideCleanTests */,
 				AE24548F233A01CC00E84170 /* Products */,
 				3AF5B0C466C3475359F60F30 /* Pods */,
 				889B0D3BF36F0166E4FB391B /* Frameworks */,
@@ -111,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				AE24548E233A01CC00E84170 /* MobileGuideClean.app */,
+				AE77DAA72341ACBE002508EB /* MobileGuideCleanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,8 +145,7 @@
 		AE245490233A01CC00E84170 /* MobileGuideClean */ = {
 			isa = PBXGroup;
 			children = (
-				AE2454D7233BC6FC00E84170 /* DetailScene */,
-				AE2454BE233A05A400E84170 /* MobileListScene */,
+				AE77DA972341A912002508EB /* Scenes */,
 				AE2454A6233A029400E84170 /* MobileListTableViewCell.swift */,
 				AE2454E8233C5F9D00E84170 /* DetailCollectionViewCell.swift */,
 				AE245497233A01CC00E84170 /* Main.storyboard */,
@@ -164,6 +190,42 @@
 			path = DetailScene;
 			sourceTree = "<group>";
 		};
+		AE77DA972341A912002508EB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AE2454D7233BC6FC00E84170 /* DetailScene */,
+				AE2454BE233A05A400E84170 /* MobileListScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AE77DAA82341ACBE002508EB /* MobileGuideCleanTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE77DAB52341ACDE002508EB /* Scenes */,
+				AE77DAA92341ACBE002508EB /* MobileGuideCleanTests.swift */,
+				AE77DAAB2341ACBE002508EB /* Info.plist */,
+			);
+			path = MobileGuideCleanTests;
+			sourceTree = "<group>";
+		};
+		AE77DAB52341ACDE002508EB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AE77DAB62341ACEA002508EB /* MobileListScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AE77DAB62341ACEA002508EB /* MobileListScene */ = {
+			isa = PBXGroup;
+			children = (
+				AE77DAB12341ACD4002508EB /* MobileListInteractorTests.swift */,
+				AE77DAB22341ACD4002508EB /* MobileListPresenterTests.swift */,
+			);
+			path = MobileListScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +248,24 @@
 			productReference = AE24548E233A01CC00E84170 /* MobileGuideClean.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AE77DAA62341ACBE002508EB /* MobileGuideCleanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE77DAAE2341ACBE002508EB /* Build configuration list for PBXNativeTarget "MobileGuideCleanTests" */;
+			buildPhases = (
+				AE77DAA32341ACBE002508EB /* Sources */,
+				AE77DAA42341ACBE002508EB /* Frameworks */,
+				AE77DAA52341ACBE002508EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE77DAAD2341ACBE002508EB /* PBXTargetDependency */,
+			);
+			name = MobileGuideCleanTests;
+			productName = MobileGuideCleanTests;
+			productReference = AE77DAA72341ACBE002508EB /* MobileGuideCleanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,6 +278,10 @@
 				TargetAttributes = {
 					AE24548D233A01CC00E84170 = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					AE77DAA62341ACBE002508EB = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = AE24548D233A01CC00E84170;
 					};
 				};
 			};
@@ -215,6 +299,7 @@
 			projectRoot = "";
 			targets = (
 				AE24548D233A01CC00E84170 /* MobileGuideClean */,
+				AE77DAA62341ACBE002508EB /* MobileGuideCleanTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +312,13 @@
 				AE24549E233A01CD00E84170 /* LaunchScreen.storyboard in Resources */,
 				AE24549B233A01CD00E84170 /* Assets.xcassets in Resources */,
 				AE245499233A01CC00E84170 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE77DAA52341ACBE002508EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +396,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE77DAA32341ACBE002508EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE77DAB42341ACD4002508EB /* MobileListPresenterTests.swift in Sources */,
+				AE77DAB32341ACD4002508EB /* MobileListInteractorTests.swift in Sources */,
+				AE77DAAA2341ACBE002508EB /* MobileGuideCleanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE77DAAD2341ACBE002508EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE24548D233A01CC00E84170 /* MobileGuideClean */;
+			targetProxy = AE77DAAC2341ACBE002508EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE245497233A01CC00E84170 /* Main.storyboard */ = {
@@ -476,6 +586,44 @@
 			};
 			name = Release;
 		};
+		AE77DAAF2341ACBE002508EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MobileGuideCleanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JJJiratip.MobileGuideCleanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileGuideClean.app/MobileGuideClean";
+			};
+			name = Debug;
+		};
+		AE77DAB02341ACBE002508EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MobileGuideCleanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JJJiratip.MobileGuideCleanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileGuideClean.app/MobileGuideClean";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -493,6 +641,15 @@
 			buildConfigurations = (
 				AE2454A3233A01CD00E84170 /* Debug */,
 				AE2454A4233A01CD00E84170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE77DAAE2341ACBE002508EB /* Build configuration list for PBXNativeTarget "MobileGuideCleanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE77DAAF2341ACBE002508EB /* Debug */,
+				AE77DAB02341ACBE002508EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
