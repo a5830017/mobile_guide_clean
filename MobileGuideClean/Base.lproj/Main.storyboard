@@ -39,7 +39,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4II-ab-eEt">
-                                                    <rect key="frame" x="357" y="67.5" width="49" height="20.5"/>
+                                                    <rect key="frame" x="286" y="67.5" width="120" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="mmy-Hv-JWx"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -72,7 +75,10 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON3-UA-wnu">
-                                                    <rect key="frame" x="107" y="67.5" width="39" height="20.5"/>
+                                                    <rect key="frame" x="107" y="67.5" width="120" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="sDJ-YK-9ur"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -142,7 +148,7 @@
                         <viewLayoutGuide key="safeArea" id="rfN-zU-Xag"/>
                     </view>
                     <navigationItem key="navigationItem" id="tdt-um-Wuv">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ner-wN-WUS">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="Ner-wN-WUS">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eXa-Ee-vrw">
                                 <rect key="frame" x="364" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,23 +236,25 @@
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-5U-XBd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="36.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-Wo-WmE">
-                                        <rect key="frame" x="8" y="8" width="49" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-Wo-WmE">
+                                        <rect key="frame" x="8" y="8" width="195" height="20.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Rating">
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="t5A-VD-mfg">
-                                        <rect key="frame" x="367" y="8" width="39" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5A-VD-mfg">
+                                        <rect key="frame" x="211" y="8" width="195" height="20.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Price">
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -258,10 +266,12 @@
                                     <constraint firstAttribute="height" constant="36.5" id="6Mh-K7-sMv"/>
                                     <constraint firstItem="t5A-VD-mfg" firstAttribute="top" secondItem="wcZ-5U-XBd" secondAttribute="top" constant="8" id="8pc-bK-8Kx"/>
                                     <constraint firstAttribute="bottom" secondItem="SHh-Wo-WmE" secondAttribute="bottom" constant="8" id="Grz-xF-I6f"/>
+                                    <constraint firstItem="t5A-VD-mfg" firstAttribute="width" secondItem="SHh-Wo-WmE" secondAttribute="width" id="IUL-hH-Lds"/>
                                     <constraint firstItem="SHh-Wo-WmE" firstAttribute="leading" secondItem="wcZ-5U-XBd" secondAttribute="leading" constant="8" id="JhT-NG-DzS"/>
                                     <constraint firstItem="SHh-Wo-WmE" firstAttribute="top" secondItem="wcZ-5U-XBd" secondAttribute="top" constant="8" id="Nvx-vX-8gx"/>
                                     <constraint firstAttribute="bottom" secondItem="t5A-VD-mfg" secondAttribute="bottom" constant="8" id="ZKS-iE-T00"/>
                                     <constraint firstAttribute="trailing" secondItem="t5A-VD-mfg" secondAttribute="trailing" constant="8" id="hFh-PE-Qt9"/>
+                                    <constraint firstItem="t5A-VD-mfg" firstAttribute="leading" secondItem="SHh-Wo-WmE" secondAttribute="trailing" constant="8" id="iHO-mt-yYA"/>
                                 </constraints>
                             </view>
                         </subviews>
