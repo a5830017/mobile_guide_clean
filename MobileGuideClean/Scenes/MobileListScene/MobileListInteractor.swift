@@ -13,8 +13,6 @@ protocol MobileListInteractorInterface {
     func check(request: MobileList.FeatureMobile.Request)
     func removeFav(request: MobileList.rmId.Request)
     func setFav(request: MobileList.FavId.Request)
-    //var mobileList: [MobileModel]? { get set }
-    //var favList: [MobileModel]? { get set }
     var segmentState: SegmentState? { get set }
     var sortType: SortType? { get set }
     
