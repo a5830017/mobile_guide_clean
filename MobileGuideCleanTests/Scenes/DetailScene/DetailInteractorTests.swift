@@ -70,7 +70,6 @@ class DetailInteractorTests: XCTestCase {
                     }
 
                 }
-        //completion(.success([ImageListMock.Image.imageA]))
             }
         }
     }
