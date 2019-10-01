@@ -170,28 +170,28 @@ class MobileListInteractorTests: XCTestCase {
 //        XCTAssertEqual(sut.favList![0].id, 1)
 
     }
-//
-//    func testFilterFavouriteDataIsFavouriteIsNull() {
-//        //Given
-//        let mobileListPresenterSpy = MobileListPresenterSpy()
-//        sut.presenter = mobileListPresenterSpy
-//        var phoneA = MobileListMock.Mobile.phoneA
-//        phoneA.isFavourite = nil
-//        sut.mobileList = [phoneA]
-//
-//        //When
-//
-//        let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
-//        sut.setFav(request: request)
-//
-//        //Then
-//        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-//        //XCTAssertEqual(MobileSeeds.Mobile.phoneA.id, 1)
-//        XCTAssertNotNil(sut.favList)
-//        XCTAssertEqual(sut.favList[0].id, 1)
-//
-//    }
-//
+
+    func testFilterFavouriteDataIsFavouriteIsNull() {
+        //Given
+        let mobileListPresenterSpy = MobileListPresenterSpy()
+        sut.presenter = mobileListPresenterSpy
+        var phoneA = MobileListMock.Mobile.phoneA
+        phoneA.isFavourite = nil
+        sut.mobileList = [phoneA]
+
+        //When
+
+        let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
+        sut.setFav(request: request)
+
+        //Then
+        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
+        //XCTAssertEqual(MobileSeeds.Mobile.phoneA.id, 1)
+        XCTAssertNotNil(sut.favList)
+        XCTAssertEqual(sut.favList[0].id, 1)
+
+    }
+
     func testRemoveFavouriteDataFromFavouriteList() {
         //Given
         let mobileListPresenterSpy = MobileListPresenterSpy()
