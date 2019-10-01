@@ -105,34 +105,34 @@ class MobileListInteractorTests: XCTestCase {
             XCTFail()
         }
     }
-//
-//    func testMobileListApiShouldFail() {
-//        // Given
-//        let mobileListPresenterSpy = MobileListPresenterSpy()
-//        sut.presenter = mobileListPresenterSpy
-//
-//
-//        let mobileListWorkerSpy = MobileListWorkerSpy(store: MobileListStoreMock())
-//        mobileListWorkerSpy.fetchDataFail = true
-//        sut.worker = mobileListWorkerSpy
-//
-//        // When
-//        let request: MobileList.GetMobile.Request = MobileList.GetMobile.Request()
-//        sut.getMobileListApi(request: request)
-//
-//        // Then
-//
-//        XCTAssertTrue(mobileListWorkerSpy.getMobileListCalled)
-//        XCTAssertTrue(mobileListPresenterSpy.presentDataFromApiCalled)
-//
-//        switch  mobileListPresenterSpy.mockModel.result {
-//        case .failure(let error):
-//            XCTAssertEqual(error.localizedDescription, "The operation couldn’t be completed. (MobileGuideCleanTests.ErrorStoreData error 0.)")
-//        default:
-//            XCTFail()
-//        }
-//    }
-//
+
+    func testMobileListApiShouldFail() {
+        // Given
+        let mobileListPresenterSpy = MobileListPresenterSpy()
+        sut.presenter = mobileListPresenterSpy
+
+
+        let mobileListWorkerSpy = MobileListWorkerSpy(store: MobileListStoreMock())
+        mobileListWorkerSpy.fetchDataFail = true
+        sut.worker = mobileListWorkerSpy
+
+        // When
+        let request: MobileList.GetMobile.Request = MobileList.GetMobile.Request()
+        sut.getMobileListApi(request: request)
+
+        // Then
+
+        XCTAssertTrue(mobileListWorkerSpy.getMobileListCalled)
+        XCTAssertTrue(mobileListPresenterSpy.presentDataFromApiCalled)
+
+        switch  mobileListPresenterSpy.mockModel.result {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, "The operation couldn’t be completed. (MobileGuideCleanTests.ErrorStoreData error 0.)")
+        default:
+            XCTFail()
+        }
+    }
+
 //    func testFilterFavouriteData() {
 //        //Given
 //        let mobileListPresenterSpy = MobileListPresenterSpy()
