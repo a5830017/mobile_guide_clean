@@ -123,5 +123,28 @@ class DetailInteractorTests: XCTestCase {
         XCTAssertEqual(detailWorkerSpy.imgData[1].id, 2)
 
     }
+    
+    func testGetImageDataButMobileIsNull() {
+        // Given
+        let deatailPresenterSpy = DeatailPresenterSpy()
+        sut.presenter = deatailPresenterSpy
+
+        let detailWorkerSpy = DetailWorkerSpy(store: DetailStoreMock())
+        detailWorkerSpy.fetchDataFail = false
+        sut.worker = detailWorkerSpy
+
+        let mobile: DisplayMobileList? = nil
+        sut.mobile = mobile
+
+
+        // When
+        let request: Detail.Something.Request = Detail.Something.Request()
+        sut.getImgData(request: request)
+
+        // Then
+        XCTAssertFalse(detailWorkerSpy.getImgCalled)
+        XCTAssertFalse(deatailPresenterSpy.presentImgCalled)
+
+    }
 
 }
