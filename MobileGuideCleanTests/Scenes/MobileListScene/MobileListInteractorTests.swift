@@ -205,25 +205,25 @@ class MobileListInteractorTests: XCTestCase {
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentRemoveCalled)
     }
-//
-//    func testRemoveFavouriteDataButDataToRemoveIsNull() {
-//        //Given
-//        let mobileListPresenterSpy = MobileListPresenterSpy()
-//        sut.presenter = mobileListPresenterSpy
-//        sut.mobileList = [MobileListMock.Mobile.phoneC]
-//
-//        //When
-//        let request : MobileList.rmId.Request = MobileList.rmId.Request(id: 1, isFav: false)
-//        sut.removeFav(request: request)
-//
-//        //Then
-//        XCTAssertFalse(mobileListPresenterSpy.presentRemoveCalled)
-//
-//    }
-//
-//
-//
-//
+
+    func testRemoveFavouriteDataButDataToRemoveIsNull() {
+        //Given
+        let mobileListPresenterSpy = MobileListPresenterSpy()
+        sut.presenter = mobileListPresenterSpy
+        sut.mobileList = [MobileListMock.Mobile.phoneC]
+
+        //When
+        let request : MobileList.rmId.Request = MobileList.rmId.Request(id: 1, isFav: false)
+        sut.removeFav(request: request)
+
+        //Then
+        XCTAssertFalse(mobileListPresenterSpy.presentRemoveCalled)
+
+    }
+
+
+
+
     func testNoFavouriteAndUnsort() {
         //Given
         let mobileListPresenterSpy = MobileListPresenterSpy()
