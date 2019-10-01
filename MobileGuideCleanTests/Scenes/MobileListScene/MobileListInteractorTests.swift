@@ -346,6 +346,4 @@ class MobileListInteractorTests: XCTestCase {
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
 
     }
-    
-    
 }
