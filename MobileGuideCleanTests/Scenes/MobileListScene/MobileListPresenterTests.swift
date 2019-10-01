@@ -127,23 +127,23 @@ class MobileListPresenterTests: XCTestCase {
             XCTFail()
         }
     }
-//    
-//    func testPresentFetchMobileDataFromApiShouldAskViewControllerToDisplayMobileApi()
-//    {
-//        // Given
-//        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-//        sut.viewController = mobileListViewControllerSpy
-//        
-//        // When
-//        let phoneA = MobileListMock.Mobile.phoneA
-//        let mobiles = [phoneA]
-//        
-//        let response = MobileList.GetMobile.Response(result: .success(mobiles))
-//        sut.presentDataFromApi(response: response)
-//        
-//        // Then
-//        XCTAssert(mobileListViewControllerSpy.displayMobileApiCalled)
-//    }
+    
+    func testPresentFetchMobileDataFromApiShouldAskViewControllerToDisplayMobileApi()
+    {
+        // Given
+        let mobileListViewControllerSpy = MobileListViewControllerSpy()
+        sut.viewController = mobileListViewControllerSpy
+        
+        // When
+        let phoneA = MobileListMock.Mobile.phoneA
+        let mobiles = [phoneA]
+        
+        let response = MobileList.GetMobile.Response(result: .success(mobiles))
+        sut.presentDataFromApi(response: response)
+        
+        // Then
+        XCTAssert(mobileListViewControllerSpy.displayMobileApiCalled)
+    }
 //    
 //    func testPresentFavouriteAndSortShouldFormatForDisplay() {
 //        // Given
