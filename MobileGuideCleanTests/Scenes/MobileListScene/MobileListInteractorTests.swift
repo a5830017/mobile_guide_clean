@@ -75,46 +75,36 @@ class MobileListInteractorTests: XCTestCase {
             }
         }
     }
+
+
     
-//    final class MobileListInteractorSpy: MobileListInteractor {
-//        
-//        var filterFavCalled = false
-//        
-//        override func filterFav() {
-//            filterFavCalled = true
-//        }
-//        
-//    }
-//    
-//    
-//    
-//    // MARK: - Tests
-//
-//    func testMobileListApiShouldReturnData() {
-//        // Given
-//        let mobileListPresenterSpy = MobileListPresenterSpy()
-//        sut.presenter = mobileListPresenterSpy
-//
-//
-//        let mobileListWorkerSpy = MobileListWorkerSpy(store: MobileListStoreMock())
-//        sut.worker = mobileListWorkerSpy
-//
-//        // When
-//        let request: MobileList.GetMobile.Request = MobileList.GetMobile.Request()
-//        sut.getMobileListApi(request: request)
-//
-//        // Then
-//        XCTAssertTrue(mobileListWorkerSpy.getMobileListCalled)
-//        XCTAssertTrue(mobileListPresenterSpy.presentDataFromApiCalled)
-//
-//        switch  mobileListPresenterSpy.mockModel.result {
-//        case .success(let data):
-//            XCTAssertEqual(data.count, 1)
-//            XCTAssertEqual(data[0].brand, "brand")
-//        default:
-//            XCTFail()
-//        }
-//    }
+    // MARK: - Tests
+
+    func testMobileListApiShouldReturnData() {
+        // Given
+        let mobileListPresenterSpy = MobileListPresenterSpy()
+        sut.presenter = mobileListPresenterSpy
+
+
+        let mobileListWorkerSpy = MobileListWorkerSpy(store: MobileListStoreMock())
+        sut.worker = mobileListWorkerSpy
+
+        // When
+        let request: MobileList.GetMobile.Request = MobileList.GetMobile.Request()
+        sut.getMobileListApi(request: request)
+
+        // Then
+        XCTAssertTrue(mobileListWorkerSpy.getMobileListCalled)
+        XCTAssertTrue(mobileListPresenterSpy.presentDataFromApiCalled)
+
+        switch  mobileListPresenterSpy.mockModel.result {
+        case .success(let data):
+            XCTAssertEqual(data.count, 1)
+            XCTAssertEqual(data[0].brand, "brand")
+        default:
+            XCTFail()
+        }
+    }
 //
 //    func testMobileListApiShouldFail() {
 //        // Given
