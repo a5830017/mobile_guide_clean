@@ -133,25 +133,26 @@ class MobileListInteractorTests: XCTestCase {
         }
     }
 
-//    func testFilterFavouriteData() {
-//        //Given
-//        let mobileListPresenterSpy = MobileListPresenterSpy()
-//        sut.presenter = mobileListPresenterSpy
-//        sut.mobileList = [MobileListMock.Mobile.phoneA, MobileListMock.Mobile.phoneB]
-//
-//        //When
-//
-//        let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
-//        sut.setFav(request: request)
-//
-//        //Then
-//        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-//        //XCTAssertEqual(MobileSeeds.Mobile.phoneA.id, 1)
-//        XCTAssertNotNil(sut.favList)
-//        XCTAssertEqual(sut.favList[0].id, 1)
-//
-//    }
-//
+    func testFilterFavouriteData() {
+        //Given
+        let mobileListPresenterSpy = MobileListPresenterSpy()
+        sut.presenter = mobileListPresenterSpy
+        sut.mobileList = [MobileListMock.Mobile.phoneA, MobileListMock.Mobile.phoneB]
+
+        //When
+
+        let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
+        sut.setFav(request: request)
+
+        //Then
+        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
+        //XCTAssertEqual(MobileSeeds.Mobile.phoneA.id, 1)
+        XCTAssertNotNil(sut.favList)
+        XCTAssertEqual(sut.favList.count, 1)
+        XCTAssertEqual(sut.favList[0].id, 1)
+
+    }
+
 //    func testFilterFavouriteDataMobileListIsNull() {
 //        //Given
 //        let mobileListPresenterSpy = MobileListPresenterSpy()
