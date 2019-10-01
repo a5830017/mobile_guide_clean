@@ -144,26 +144,26 @@ class MobileListPresenterTests: XCTestCase {
         // Then
         XCTAssert(mobileListViewControllerSpy.displayMobileApiCalled)
     }
-//    
-//    func testPresentFavouriteAndSortShouldFormatForDisplay() {
-//        // Given
-//        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-//        sut.viewController = mobileListViewControllerSpy
-//        // when
-//        let phoneA = MobileListMock.Mobile.phoneA
-//        let mobiles = [phoneA]
-//        
-//        let response = MobileList.FeatureMobile.Response(result: mobiles)
-//        sut.presentFeature(response: response)
-//        
-//        //Then
-//        let displayMobileData = mobileListViewControllerSpy.viewModelFeature.content
-//        
-//        XCTAssertEqual(displayMobileData.count, 1)
-//        XCTAssertEqual(displayMobileData[0].id, 1)
-//        
-//        
-//    }
+    
+    func testPresentFavouriteAndSortShouldFormatForDisplay() {
+        // Given
+        let mobileListViewControllerSpy = MobileListViewControllerSpy()
+        sut.viewController = mobileListViewControllerSpy
+        // when
+        let phoneA = MobileListMock.Mobile.phoneA
+        let mobiles = [phoneA]
+        
+        let response = MobileList.FeatureMobile.Response(result: mobiles)
+        sut.presentFeature(response: response)
+        
+        //Then
+        let displayMobileData = mobileListViewControllerSpy.viewModelFeature.content
+        
+        XCTAssertEqual(displayMobileData.count, 1)
+        XCTAssertEqual(displayMobileData[0].id, 1)
+        
+        
+    }
 //    
 //    func testPresentFavouriteAndSortShouldAskViewControllerToDisplayMobileFeture() {
 //        // Given
