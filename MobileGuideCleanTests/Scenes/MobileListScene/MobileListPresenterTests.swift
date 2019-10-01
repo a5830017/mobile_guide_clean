@@ -73,39 +73,39 @@ class MobileListPresenterTests: XCTestCase {
         
         
     }
-//    
-//    // MARK: - Tests
-//    
-//    func testPresentFetchMobileDataFromApiShouldFormatForDisplay() {
-//        // Given
-//        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-//        sut.viewController = mobileListViewControllerSpy
-//        
-//        // When
-//        let phoneA = MobileListMock.Mobile.phoneA
-//        let mobiles = [phoneA]
-//        
-//        let response = MobileList.GetMobile.Response(result: .success(mobiles))
-//        sut.presentDataFromApi(response: response)
-//        
-//        // Then
-//        let displayMobileDataApi = mobileListViewControllerSpy.viewModelApi.content
-//        
-//        switch displayMobileDataApi {
-//        case .success(let mobiles):
-//            XCTAssertEqual(mobiles.count, 1)
-//            XCTAssertEqual(mobiles[0].name, "name")
-//            XCTAssertEqual(mobiles[0].price, "price : $1.1")
-//            XCTAssertEqual(mobiles[0].thumbImageURL, "url")
-//            XCTAssertEqual(mobiles[0].brand, "brand")
-//            XCTAssertEqual(mobiles[0].rating, "rating : 1.2")
-//            XCTAssertEqual(mobiles[0].id, 1)
-//            XCTAssertEqual(mobiles[0].description, "description")
-//            XCTAssertEqual(mobiles[0].isFav, false)
-//        default:
-//            XCTFail()
-//        }
-//    }
+    
+    // MARK: - Tests
+    
+    func testPresentFetchMobileDataFromApiShouldFormatForDisplay() {
+        // Given
+        let mobileListViewControllerSpy = MobileListViewControllerSpy()
+        sut.viewController = mobileListViewControllerSpy
+        
+        // When
+        let phoneA = MobileListMock.Mobile.phoneA
+        let mobiles = [phoneA]
+        
+        let response = MobileList.GetMobile.Response(result: .success(mobiles))
+        sut.presentDataFromApi(response: response)
+        
+        // Then
+        let displayMobileDataApi = mobileListViewControllerSpy.viewModelApi.content
+        
+        switch displayMobileDataApi {
+        case .success(let mobiles):
+            XCTAssertEqual(mobiles.count, 1)
+            XCTAssertEqual(mobiles[0].name, "name")
+            XCTAssertEqual(mobiles[0].price, "price : $1.1")
+            XCTAssertEqual(mobiles[0].thumbImageURL, "url")
+            XCTAssertEqual(mobiles[0].brand, "brand")
+            XCTAssertEqual(mobiles[0].rating, "rating : 1.2")
+            XCTAssertEqual(mobiles[0].id, 1)
+            XCTAssertEqual(mobiles[0].description, "description")
+            XCTAssertEqual(mobiles[0].isFav, false)
+        default:
+            XCTFail()
+        }
+    }
 //    
 //    func testPresentFetchMobileFailFromApiShouldReturnError() {
 //        // Given
