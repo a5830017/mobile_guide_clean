@@ -20,7 +20,7 @@ class MobileListRouter: MobileListRouterInput {
     func navigateToDetailScene(sender: DisplayMobileList) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let DetailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        let selectedMobile = sender //as? MobileModel
+        let selectedMobile = sender 
         DetailViewController.interactor.mobile = selectedMobile
         viewController.navigationController?.pushViewController(DetailViewController, animated: true)
     }
