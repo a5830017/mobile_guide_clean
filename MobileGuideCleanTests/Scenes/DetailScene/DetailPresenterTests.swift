@@ -75,33 +75,33 @@ class DetailPresenterTests: XCTestCase {
             XCTFail()
         }
     }
-//
-//    func testPresentImageMobileDataFromApiShouldFormatDisplay() {
-//        // Given
-//        let detailViewControllerSpy = DetailViewControllerSpy()
-//        sut.viewController = detailViewControllerSpy
-//
-//        // When
-//        let imageA = ImageListMock.Image.imageA
-//        let imgs = [imageA]
-//
-//        let phone: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "rating", isFav: false, id: 1)
-//
-//        let response = Detail.Something.Response(result: .success(imgs), mobile: phone)
-//        sut.presentImg(response: response)
-//
-//        // Then
-//        let displayImgFromApi = detailViewControllerSpy.viewModel.content
-//
-//        switch displayImgFromApi {
-//        case .success(let imgs):
-//            XCTAssertEqual(imgs.count, 1)
-//            XCTAssertEqual(imgs[0].id, 1)
-//            XCTAssertEqual(imgs[0].mobileId, 1)
-//            XCTAssertEqual(imgs[0].url, "url")
-//        default:
-//            XCTFail()
-//        }
-//    }
-//
-//}
+
+    func testPresentImageMobileDataFromApiShouldFormatDisplay() {
+        // Given
+        let detailViewControllerSpy = DetailViewControllerSpy()
+        sut.viewController = detailViewControllerSpy
+
+        // When
+        let imageA = ImageListMock.Image.imageA
+        let imgs = [imageA]
+
+        let phone: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "rating", isFav: false, id: 1)
+
+        let response = Detail.Something.Response(result: .success(imgs), mobile: phone)
+        sut.presentImg(response: response)
+
+        // Then
+        let displayImgFromApi = detailViewControllerSpy.viewModel.content
+
+        switch displayImgFromApi {
+        case .success(let imgs):
+            XCTAssertEqual(imgs.count, 1)
+            XCTAssertEqual(imgs[0].id, 1)
+            XCTAssertEqual(imgs[0].mobileId, 1)
+            XCTAssertEqual(imgs[0].url, "url")
+        default:
+            XCTFail()
+        }
+    }
+
+}
