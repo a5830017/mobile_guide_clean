@@ -198,19 +198,19 @@ class MobileListPresenterTests: XCTestCase {
         
         XCTAssertEqual(displayMobileDataAfterRemove.count, 1)
     }
-//    
-//    func testPresentFavouriteAndSortShouldAskViewControllerToDisplayAfterRemoveMobile() {
-//        // Given
-//        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-//        sut.viewController = mobileListViewControllerSpy
-//        // when
-//        let phoneA = MobileListMock.Mobile.phoneA
-//        let mobiles = [phoneA]
-//        
-//        let response = MobileList.FeatureMobile.Response(result: mobiles)
-//        sut.presentRemove(response: response)
-//        
-//        //Then
-//        XCTAssert(mobileListViewControllerSpy.displayRemoveMobile)
-//    }
-//}
+    
+    func testPresentFavouriteAndSortShouldAskViewControllerToDisplayAfterRemoveMobile() {
+        // Given
+        let mobileListViewControllerSpy = MobileListViewControllerSpy()
+        sut.viewController = mobileListViewControllerSpy
+        // when
+        let phoneA = MobileListMock.Mobile.phoneA
+        let mobiles = [phoneA]
+        
+        let response = MobileList.FeatureMobile.Response(result: mobiles)
+        sut.presentRemove(response: response)
+        
+        //Then
+        XCTAssert(mobileListViewControllerSpy.displayRemoveMobile)
+    }
+}
