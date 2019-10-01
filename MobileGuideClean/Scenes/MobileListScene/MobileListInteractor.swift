@@ -79,20 +79,27 @@ class MobileListInteractor: MobileListInteractorInterface {
                 let response = MobileList.FeatureMobile.Response(result: mobileList)
                 self.presenter.presentFeature(response: response)
             } else if (sortType == .priceLowToHigh){
-                mobileList = mobileList.sorted(by: { $0.price < $1.price })
-                favList = favList.sorted(by: { $0.price < $1.price })
+                mobileList = sort(type: .priceLowToHigh, array: mobileList)
+                favList = sort(type: .priceLowToHigh, array: favList)
+//                mobileList = mobileList.sorted(by: { $0.price < $1.price })
+//                favList = favList.sorted(by: { $0.price < $1.price })
             } else if (sortType == .priceHighToLow) {
-                mobileList = mobileList.sorted(by: { $0.price > $1.price })
-                favList = favList.sorted(by: { $0.price > $1.price })
+                mobileList = sort(type: .priceHighToLow, array: mobileList)
+                favList = sort(type: .priceHighToLow, array: favList)
+                
+//                mobileList = mobileList.sorted(by: { $0.price > $1.price })
+//                favList = favList.sorted(by: { $0.price > $1.price })
             } else { // rating
-                mobileList = mobileList.sorted(by: { $0.rating > $1.rating })
-                favList = favList.sorted(by: { $0.rating > $1.rating })
+                mobileList = sort(type: .rating, array: mobileList)
+                favList = sort(type: .rating, array: favList)
+//                mobileList = mobileList.sorted(by: { $0.rating > $1.rating })
+//                favList = favList.sorted(by: { $0.rating > $1.rating })
             }
             
             let response = MobileList.FeatureMobile.Response(result: mobileList)
             self.presenter.presentFeature(response: response)
         } else { // segmentState == .favourite
-            filterFav()
+//            filterFav()
             if(sortType == .isDefault){
                 let response = MobileList.FeatureMobile.Response(result: favList)
                 self.presenter.presentFeature(response: response)
@@ -112,7 +119,19 @@ class MobileListInteractor: MobileListInteractorInterface {
         }
     }
     
-    func filterFav() {
-        favList = mobileList.filter { $0.isFavourite != nil && $0.isFavourite! == true }
+    func sort(type: SortType, array: [MobileModel]) -> [MobileModel]{
+        switch type {
+        case .priceLowToHigh:
+            return array.sorted(by: { $0.price < $1.price })
+            
+        case .priceHighToLow:
+            return array.sorted(by: { $0.price > $1.price })
+            
+        case .rating:
+            return array.sorted(by: { $0.rating > $1.rating })
+            
+        default:
+            return []
+        }
     }
 }
