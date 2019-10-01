@@ -106,27 +106,27 @@ class MobileListPresenterTests: XCTestCase {
             XCTFail()
         }
     }
-//    
-//    func testPresentFetchMobileFailFromApiShouldReturnError() {
-//        // Given
-//        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-//        sut.viewController = mobileListViewControllerSpy
-//        
-//        // When
-//        let response = MobileList.GetMobile.Response(result: .failure(ErrorStoreData.noInternetConnection))
-//        sut.presentDataFromApi(response: response)
-//        
-//        // Then
-//        let displayMobileDataApi = mobileListViewControllerSpy.viewModelApi.content
-//        
-//        switch displayMobileDataApi {
-//        case .failure(let error):
-//            XCTAssertEqual(error.localizedDescription, "The operation couldn’t be completed. (MobileGuideCleanTests.ErrorStoreData error 0.)")
-//            
-//        default:
-//            XCTFail()
-//        }
-//    }
+    
+    func testPresentFetchMobileFailFromApiShouldReturnError() {
+        // Given
+        let mobileListViewControllerSpy = MobileListViewControllerSpy()
+        sut.viewController = mobileListViewControllerSpy
+        
+        // When
+        let response = MobileList.GetMobile.Response(result: .failure(ErrorStoreData.noInternetConnection))
+        sut.presentDataFromApi(response: response)
+        
+        // Then
+        let displayMobileDataApi = mobileListViewControllerSpy.viewModelApi.content
+        
+        switch displayMobileDataApi {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, "The operation couldn’t be completed. (MobileGuideCleanTests.ErrorStoreData error 0.)")
+            
+        default:
+            XCTFail()
+        }
+    }
 //    
 //    func testPresentFetchMobileDataFromApiShouldAskViewControllerToDisplayMobileApi()
 //    {
