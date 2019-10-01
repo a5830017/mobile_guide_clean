@@ -99,30 +99,30 @@ class DetailInteractorTests: XCTestCase {
         XCTAssertTrue(deatailPresenterSpy.presentImgCalled)
     }
 
-//    func testGetImageDataShouldReturnData() {
-//        // Given
-//        let deatailPresenterSpy = DeatailPresenterSpy()
-//        sut.presenter = deatailPresenterSpy
-//
-//        let detailWorkerSpy = DetailWorkerSpy(store: DetailStoreMock())
-//        detailWorkerSpy.fetchDataFail = false
-//        sut.worker = detailWorkerSpy
-//
-//        let mobile: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "1.1", isFav: false, id: 1)
-//        sut.mobile = mobile
-//
-//
-//        // When
-//        let request: Detail.Something.Request = Detail.Something.Request()
-//        sut.getImgData(request: request)
-//
-//        // Then
-//        XCTAssertTrue(detailWorkerSpy.getImgCalled)
-//        XCTAssertTrue(deatailPresenterSpy.presentImgCalled)
-//        XCTAssertEqual(detailWorkerSpy.imgData.count, 3)
-//        XCTAssertEqual(detailWorkerSpy.imgData[0].id, 1)
-//        XCTAssertEqual(detailWorkerSpy.imgData[1].id, 2)
-//
-//    }
-//
-//}
+    func testGetImageDataShouldReturnData() {
+        // Given
+        let deatailPresenterSpy = DeatailPresenterSpy()
+        sut.presenter = deatailPresenterSpy
+
+        let detailWorkerSpy = DetailWorkerSpy(store: DetailStoreMock())
+        detailWorkerSpy.fetchDataFail = false
+        sut.worker = detailWorkerSpy
+
+        let mobile: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "1.1", isFav: false, id: 1)
+        sut.mobile = mobile
+
+
+        // When
+        let request: Detail.Something.Request = Detail.Something.Request()
+        sut.getImgData(request: request)
+
+        // Then
+        XCTAssertTrue(detailWorkerSpy.getImgCalled)
+        XCTAssertTrue(deatailPresenterSpy.presentImgCalled)
+        XCTAssertEqual(detailWorkerSpy.imgData.count, 3)
+        XCTAssertEqual(detailWorkerSpy.imgData[0].id, 1)
+        XCTAssertEqual(detailWorkerSpy.imgData[1].id, 2)
+
+    }
+
+}
