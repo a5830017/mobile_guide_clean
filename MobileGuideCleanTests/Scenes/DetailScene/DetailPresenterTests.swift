@@ -50,31 +50,31 @@ class DetailPresenterTests: XCTestCase {
 
 
     }
-//
-//
-//    // MARK: - Tests
-//
-//    func testPresentFetchImageMobileDataFailShouldReturnFail() {
-//        // Given
-//        let detailViewControllerSpy = DetailViewControllerSpy()
-//        sut.viewController = detailViewControllerSpy
-//
-//        // When
-//        let phone: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "rating", isFav: false, id: 1)
-//
-//        let response = Detail.Something.Response(result: .failure(ErrorStoreData.noInternetConnection), mobile: phone)
-//        sut.presentImg(response: response)
-//
-//        // Then
-//        let displayImgFromApi = detailViewControllerSpy.viewModel.content
-//
-//        switch displayImgFromApi {
-//        case .failure(let error):
-//            XCTAssertEqual(error.localizedDescription, "The operation couldn’t be completed. (MobileGuideCleanTests.ErrorStoreData error 0.)")
-//        default:
-//            XCTFail()
-//        }
-//    }
+
+
+    // MARK: - Tests
+
+    func testPresentFetchImageMobileDataFailShouldReturnFail() {
+        // Given
+        let detailViewControllerSpy = DetailViewControllerSpy()
+        sut.viewController = detailViewControllerSpy
+
+        // When
+        let phone: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "rating", isFav: false, id: 1)
+
+        let response = Detail.Something.Response(result: .failure(ErrorStoreData.noInternetConnection), mobile: phone)
+        sut.presentImg(response: response)
+
+        // Then
+        let displayImgFromApi = detailViewControllerSpy.viewModel.content
+
+        switch displayImgFromApi {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, "The operation couldn’t be completed. (MobileGuideCleanTests.ErrorStoreData error 0.)")
+        default:
+            XCTFail()
+        }
+    }
 //
 //    func testPresentImageMobileDataFromApiShouldFormatDisplay() {
 //        // Given
