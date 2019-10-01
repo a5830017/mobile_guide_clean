@@ -305,21 +305,21 @@ class MobileListInteractorTests: XCTestCase {
 
     }
 
-//    func testFavouriteAndSortPriceLowToHigh() {
-//        //Given
-//        let mobileListPresenterSpy = MobileListPresenterSpy()
-//        sut.presenter = mobileListPresenterSpy
-//        sut.mobileList = MobileListMock.Mobile.mobileList
-//        sut.favList = MobileListMock.Mobile.favList
-//
-//        //When
-//        let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: .priceLowToHigh)
-//        sut.check(request: request)
-//
-//        //Then
-//        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-//
-//    }
+    func testFavouriteAndSortPriceLowToHigh() {
+        //Given
+        let mobileListPresenterSpy = MobileListPresenterSpy()
+        sut.presenter = mobileListPresenterSpy
+        sut.mobileList = MobileListMock.Mobile.mobileList
+        sut.favList = MobileListMock.Mobile.favList
+
+        //When
+        let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: .priceLowToHigh)
+        sut.check(request: request)
+
+        //Then
+        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
+
+    }
 //
 //    func testFavouriteAndSortPriceHighToLow() {
 //        //Given
