@@ -146,7 +146,6 @@ class MobileListInteractorTests: XCTestCase {
 
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-        //XCTAssertEqual(MobileSeeds.Mobile.phoneA.id, 1)
         XCTAssertNotNil(sut.favList)
         XCTAssertEqual(sut.favList.count, 1)
         XCTAssertEqual(sut.favList[0].id, 1)
@@ -165,9 +164,6 @@ class MobileListInteractorTests: XCTestCase {
 
         //Then
         XCTAssertFalse(mobileListPresenterSpy.presentFeatureCalled)
-        //XCTAssertEqual(MobileSeeds.Mobile.phoneA.id, 1)
-//        XCTAssertNotNil(sut.favList)
-//        XCTAssertEqual(sut.favList![0].id, 1)
 
     }
 
@@ -186,7 +182,6 @@ class MobileListInteractorTests: XCTestCase {
 
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-        //XCTAssertEqual(MobileSeeds.Mobile.phoneA.id, 1)
         XCTAssertNotNil(sut.favList)
         XCTAssertEqual(sut.favList[0].id, 1)
 
@@ -300,7 +295,6 @@ class MobileListInteractorTests: XCTestCase {
         sut.check(request: request)
 
         //Then
-        //XCTAssertTrue(MobileListInteractorSpy().filterFavCalled)
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
 
     }
