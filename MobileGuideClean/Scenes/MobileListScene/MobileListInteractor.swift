@@ -76,8 +76,10 @@ class MobileListInteractor: MobileListInteractorInterface {
         sortType = request.sortType
         if (segmentState == .all) {
             if(sortType == .isDefault){
-                let response = MobileList.FeatureMobile.Response(result: mobileList)
-                self.presenter.presentFeature(response: response)
+//                let response = MobileList.FeatureMobile.Response(result: mobileList)
+//                self.presenter.presentFeature(response: response)
+                mobileList = sort(type: .isDefault, array: mobileList)
+                favList = sort(type: .isDefault, array: favList)
             } else if (sortType == .priceLowToHigh){
                 mobileList = sort(type: .priceLowToHigh, array: mobileList)
                 favList = sort(type: .priceLowToHigh, array: favList)
@@ -99,17 +101,19 @@ class MobileListInteractor: MobileListInteractorInterface {
         } else { // segmentState == .favourite
 //            filterFav()
             if(sortType == .isDefault){
-                let response = MobileList.FeatureMobile.Response(result: favList)
-                self.presenter.presentFeature(response: response)
+//                let response = MobileList.FeatureMobile.Response(result: favList)
+//                self.presenter.presentFeature(response: response)
+                mobileList = sort(type: .isDefault, array: mobileList)
+                favList = sort(type: .isDefault, array: favList)
             } else if (sortType == .priceLowToHigh) {
-                mobileList = mobileList.sorted(by: { $0.price < $1.price })
-                favList = favList.sorted(by: { $0.price < $1.price })
+                mobileList = sort(type: .priceLowToHigh, array: mobileList)
+                favList = sort(type: .priceLowToHigh, array: favList)
             } else if (sortType == .priceHighToLow) {
-                mobileList = mobileList.sorted(by: { $0.price > $1.price })
-                favList = favList.sorted(by: { $0.price > $1.price })
+                mobileList = sort(type: .priceHighToLow, array: mobileList)
+                favList = sort(type: .priceHighToLow, array: favList)
             } else { // rating
-                mobileList = mobileList.sorted(by: { $0.rating > $1.rating })
-                favList = favList.sorted(by: { $0.rating > $1.rating })
+                mobileList = sort(type: .rating, array: mobileList)
+                favList = sort(type: .rating, array: favList)
             }
             
             let response = MobileList.FeatureMobile.Response(result: favList)
@@ -128,8 +132,8 @@ class MobileListInteractor: MobileListInteractorInterface {
         case .rating:
             return array.sorted(by: { $0.rating > $1.rating })
             
-        default:
-            return []
+        case .isDefault:
+            return array
         }
     }
 }

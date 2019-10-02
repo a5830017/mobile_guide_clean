@@ -319,4 +319,32 @@ class MobileListInteractorTests: XCTestCase {
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
         
     }
+    
+    func testFavouriteAndSortTypeIsUnsort() {
+        //Given
+        sut.mobileList = MobileListMock.Mobile.mobileList
+        sut.favList = MobileListMock.Mobile.favList
+        let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: .isDefault)
+        
+        //When
+        sut.check(request: request)
+        
+        //Then
+        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
+        
+    }
+    
+    func testAllListAndSortTypeIsUnsort() {
+        //Given
+        sut.mobileList = MobileListMock.Mobile.mobileList
+        sut.favList = MobileListMock.Mobile.favList
+        let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .all, sortType: .isDefault)
+        
+        //When
+        sut.check(request: request)
+        
+        //Then
+        XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
+        
+    }
 }
