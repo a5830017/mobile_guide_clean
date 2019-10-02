@@ -55,10 +55,7 @@ class DetailPresenterTests: XCTestCase {
 
             self.viewModel = viewModel
         }
-
-
     }
-
 
     // MARK: - Tests
 

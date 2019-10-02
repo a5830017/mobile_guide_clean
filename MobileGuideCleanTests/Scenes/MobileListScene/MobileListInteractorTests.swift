@@ -136,7 +136,7 @@ class MobileListInteractorTests: XCTestCase {
     }
     
     func testFilterFavouriteData() {
-        //Given
+        // Given
         sut.mobileList = [MobileListMock.Mobile.phoneA, MobileListMock.Mobile.phoneB]
         let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
         
@@ -177,7 +177,6 @@ class MobileListInteractorTests: XCTestCase {
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
         XCTAssertNotNil(sut.favList)
         XCTAssertEqual(sut.favList[0].id, 1)
-        
     }
     
     func testRemoveFavouriteDataFromFavouriteList() {
@@ -204,9 +203,6 @@ class MobileListInteractorTests: XCTestCase {
         XCTAssertFalse(mobileListPresenterSpy.presentRemoveCalled)
         
     }
-    
-    
-    
     
     func testNoFavouriteAndUnsort() {
         //Given

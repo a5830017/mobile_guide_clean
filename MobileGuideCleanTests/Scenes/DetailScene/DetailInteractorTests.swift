@@ -17,7 +17,6 @@ class DetailInteractorTests: XCTestCase {
     var deatailPresenterSpy: DeatailPresenterSpy!
     var detailWorkerSpy: DetailWorkerSpy!
 
-
     // MARK: - Test lifecycle
 
     override func setUp() {
@@ -28,8 +27,10 @@ class DetailInteractorTests: XCTestCase {
     }
 
     override func tearDown() {
-        super.tearDown()
+        deatailPresenterSpy = nil
+        detailWorkerSpy = nil
         sut = nil
+        super.tearDown()
     }
 
     // MARK: - Test setup
@@ -82,7 +83,6 @@ class DetailInteractorTests: XCTestCase {
                     default:
                         return
                     }
-
                 }
             }
         }
@@ -115,6 +115,7 @@ class DetailInteractorTests: XCTestCase {
         sut.mobile = mobile
 
         let request: Detail.Something.Request = Detail.Something.Request()
+
         // When
         sut.getImgData(request: request)
 
@@ -124,23 +125,6 @@ class DetailInteractorTests: XCTestCase {
         XCTAssertEqual(detailWorkerSpy.imgData.count, 3)
         XCTAssertEqual(detailWorkerSpy.imgData[0].id, 1)
         XCTAssertEqual(detailWorkerSpy.imgData[1].id, 2)
-
-    }
-    
-    func testGetImageDataButMobileIsNull() {
-        // Given
-        detailWorkerSpy.fetchDataFail = false
-
-        let mobile: DisplayMobileList? = nil
-        sut.mobile = mobile
-        let request: Detail.Something.Request = Detail.Something.Request()
-
-        // When
-        sut.getImgData(request: request)
-
-        // Then
-//        XCTAssertTrue(detailWorkerSpy.getImgCalled)
-//        XCTAssertFalse(deatailPresenterSpy.presentImgCalled)
 
     }
 
