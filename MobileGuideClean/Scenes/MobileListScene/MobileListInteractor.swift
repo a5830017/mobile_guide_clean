@@ -81,8 +81,6 @@ class MobileListInteractor: MobileListInteractorInterface {
             } else if (sortType == .priceLowToHigh){
                 mobileList = sort(type: .priceLowToHigh, array: mobileList)
                 favList = sort(type: .priceLowToHigh, array: favList)
-//                mobileList = mobileList.sorted(by: { $0.price < $1.price })
-//                favList = favList.sorted(by: { $0.price < $1.price })
             } else if (sortType == .priceHighToLow) {
                 mobileList = sort(type: .priceHighToLow, array: mobileList)
                 favList = sort(type: .priceHighToLow, array: favList)
