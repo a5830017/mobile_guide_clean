@@ -14,22 +14,30 @@ class MobileListPresenterTests: XCTestCase {
     // MARK: - Subject under test
     
     var sut: MobileListPresenter!
+    var mobileListViewControllerSpy: MobileListViewControllerSpy!
     
     // MARK: - Test lifecycle
     
     override func setUp() {
         super.setUp()
         setupMobileListPresenter()
+        setupMobileListViewControllerOutput()
     }
     
     override func tearDown() {
         super.tearDown()
+        sut = nil
     }
     
     // MARK: - Test setup
     
     func setupMobileListPresenter() {
         sut = MobileListPresenter()
+    }
+    
+    func setupMobileListViewControllerOutput() {
+        mobileListViewControllerSpy = MobileListViewControllerSpy()
+        sut.viewController = mobileListViewControllerSpy
     }
     
     // MARK: - Test doubles
@@ -78,14 +86,11 @@ class MobileListPresenterTests: XCTestCase {
     
     func testPresentFetchMobileDataFromApiShouldFormatForDisplay() {
         // Given
-        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-        sut.viewController = mobileListViewControllerSpy
-        
-        // When
         let phoneA = MobileListMock.Mobile.phoneA
         let mobiles = [phoneA]
-        
         let response = MobileList.GetMobile.Response(result: .success(mobiles))
+        
+        // When
         sut.presentDataFromApi(response: response)
         
         // Then
@@ -109,11 +114,9 @@ class MobileListPresenterTests: XCTestCase {
     
     func testPresentFetchMobileFailFromApiShouldReturnError() {
         // Given
-        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-        sut.viewController = mobileListViewControllerSpy
+        let response = MobileList.GetMobile.Response(result: .failure(ErrorStoreData.noInternetConnection))
         
         // When
-        let response = MobileList.GetMobile.Response(result: .failure(ErrorStoreData.noInternetConnection))
         sut.presentDataFromApi(response: response)
         
         // Then
@@ -131,29 +134,56 @@ class MobileListPresenterTests: XCTestCase {
     func testPresentFetchMobileDataFromApiShouldAskViewControllerToDisplayMobileApi()
     {
         // Given
-        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-        sut.viewController = mobileListViewControllerSpy
-        
-        // When
         let phoneA = MobileListMock.Mobile.phoneA
         let mobiles = [phoneA]
         
         let response = MobileList.GetMobile.Response(result: .success(mobiles))
+        
+        // When
+        
         sut.presentDataFromApi(response: response)
         
         // Then
         XCTAssert(mobileListViewControllerSpy.displayMobileApiCalled)
     }
     
+    func testPresentFetchMobileDataFromApiShouldFormatForDisplayButFavouriteIsNull() {
+        // Given
+        var phoneA = MobileListMock.Mobile.phoneA
+        phoneA.isFavourite = nil
+        let mobiles = [phoneA]
+        let response = MobileList.GetMobile.Response(result: .success(mobiles))
+        
+        // When
+        sut.presentDataFromApi(response: response)
+        
+        // Then
+        let displayMobileDataApi = mobileListViewControllerSpy.viewModelApi.content
+        
+        switch displayMobileDataApi {
+        case .success(let mobiles):
+            XCTAssertEqual(mobiles.count, 1)
+            XCTAssertEqual(mobiles[0].name, "name")
+            XCTAssertEqual(mobiles[0].price, "price : $1.1")
+            XCTAssertEqual(mobiles[0].thumbImageURL, "url")
+            XCTAssertEqual(mobiles[0].brand, "brand")
+            XCTAssertEqual(mobiles[0].rating, "rating : 1.2")
+            XCTAssertEqual(mobiles[0].id, 1)
+            XCTAssertEqual(mobiles[0].description, "description")
+            XCTAssertEqual(mobiles[0].isFav, false)
+        default:
+            XCTFail()
+        }
+    }
+    
     func testPresentFavouriteAndSortShouldFormatForDisplay() {
         // Given
-        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-        sut.viewController = mobileListViewControllerSpy
-        // when
         let phoneA = MobileListMock.Mobile.phoneA
         let mobiles = [phoneA]
         
         let response = MobileList.FeatureMobile.Response(result: mobiles)
+      
+        // when
         sut.presentFeature(response: response)
         
         //Then
@@ -161,19 +191,46 @@ class MobileListPresenterTests: XCTestCase {
         
         XCTAssertEqual(displayMobileData.count, 1)
         XCTAssertEqual(displayMobileData[0].id, 1)
+        XCTAssertEqual(displayMobileData[0].brand, "brand")
+        XCTAssertEqual(displayMobileData[0].description, "description")
+        XCTAssertEqual(displayMobileData[0].isFav, false)
+        XCTAssertEqual(displayMobileData[0].name, "name")
+        XCTAssertEqual(displayMobileData[0].price, "price : $1.1")
+        XCTAssertEqual(displayMobileData[0].rating, "rating : 1.2")
+    }
+    
+    func testPresentFavouriteAndSortShouldFormatForDisplayButFavouriteIsNull() {
+        // Given
+        var phoneA = MobileListMock.Mobile.phoneA
+        phoneA.isFavourite = nil
+        let mobiles = [phoneA]
         
+        let response = MobileList.FeatureMobile.Response(result: mobiles)
+      
+        // when
+        sut.presentFeature(response: response)
         
+        //Then
+        let displayMobileData = mobileListViewControllerSpy.viewModelFeature.content
+        
+        XCTAssertEqual(displayMobileData.count, 1)
+        XCTAssertEqual(displayMobileData[0].id, 1)
+        XCTAssertEqual(displayMobileData[0].brand, "brand")
+        XCTAssertEqual(displayMobileData[0].description, "description")
+        XCTAssertEqual(displayMobileData[0].isFav, false)
+        XCTAssertEqual(displayMobileData[0].name, "name")
+        XCTAssertEqual(displayMobileData[0].price, "price : $1.1")
+        XCTAssertEqual(displayMobileData[0].rating, "rating : 1.2")
     }
     
     func testPresentFavouriteAndSortShouldAskViewControllerToDisplayMobileFeture() {
         // Given
-        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-        sut.viewController = mobileListViewControllerSpy
-        // when
         let phoneA = MobileListMock.Mobile.phoneA
         let mobiles = [phoneA]
         
         let response = MobileList.FeatureMobile.Response(result: mobiles)
+        // when
+        
         sut.presentFeature(response: response)
         
         //Then
@@ -184,30 +241,59 @@ class MobileListPresenterTests: XCTestCase {
     
     func testPresentRemoveFavouriteMobileShouldFormatForDisplay() {
         // Given
-        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-        sut.viewController = mobileListViewControllerSpy
-        // when
         let phoneA = MobileListMock.Mobile.phoneA
         let mobiles = [phoneA]
         
         let response = MobileList.FeatureMobile.Response(result: mobiles)
+        
+        // when
         sut.presentRemove(response: response)
         
         //Then
         let displayMobileDataAfterRemove = mobileListViewControllerSpy.viewModelFeature.content
         
         XCTAssertEqual(displayMobileDataAfterRemove.count, 1)
+        XCTAssertEqual(displayMobileDataAfterRemove[0].id, 1)
+        XCTAssertEqual(displayMobileDataAfterRemove[0].brand, "brand")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].description, "description")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].isFav, false)
+        XCTAssertEqual(displayMobileDataAfterRemove[0].name, "name")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].price, "price : $1.1")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].rating, "rating : 1.2")
+    }
+    
+    func testPresentRemoveFavouriteMobileShouldFormatForDisplayButFavouriteIsNull() {
+        // Given
+        var phoneA = MobileListMock.Mobile.phoneA
+        phoneA.isFavourite = nil
+        let mobiles = [phoneA]
+        
+        let response = MobileList.FeatureMobile.Response(result: mobiles)
+        
+        // when
+        sut.presentRemove(response: response)
+        
+        //Then
+        let displayMobileDataAfterRemove = mobileListViewControllerSpy.viewModelFeature.content
+        
+        XCTAssertEqual(displayMobileDataAfterRemove.count, 1)
+        XCTAssertEqual(displayMobileDataAfterRemove[0].id, 1)
+        XCTAssertEqual(displayMobileDataAfterRemove[0].brand, "brand")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].description, "description")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].isFav, false)
+        XCTAssertEqual(displayMobileDataAfterRemove[0].name, "name")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].price, "price : $1.1")
+        XCTAssertEqual(displayMobileDataAfterRemove[0].rating, "rating : 1.2")
     }
     
     func testPresentFavouriteAndSortShouldAskViewControllerToDisplayAfterRemoveMobile() {
         // Given
-        let mobileListViewControllerSpy = MobileListViewControllerSpy()
-        sut.viewController = mobileListViewControllerSpy
-        // when
         let phoneA = MobileListMock.Mobile.phoneA
         let mobiles = [phoneA]
         
         let response = MobileList.FeatureMobile.Response(result: mobiles)
+    
+        // when
         sut.presentRemove(response: response)
         
         //Then

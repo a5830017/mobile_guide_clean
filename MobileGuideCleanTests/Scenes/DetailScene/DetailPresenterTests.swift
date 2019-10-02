@@ -14,22 +14,30 @@ class DetailPresenterTests: XCTestCase {
     // MARK: - Subject under test
 
     var sut: DetailPresenter!
+    var detailViewControllerSpy: DetailViewControllerSpy!
 
     // MARK: - Test lifecycle
 
     override func setUp() {
         super.setUp()
         setupDetailPresenter()
+        setupDetailViewControllerOutput()
     }
 
     override func tearDown() {
         super.tearDown()
+        sut = nil
     }
 
     // MARK: - Test setup
 
     func setupDetailPresenter() {
         sut = DetailPresenter()
+    }
+    
+    func setupDetailViewControllerOutput(){
+        detailViewControllerSpy = DetailViewControllerSpy()
+        sut.viewController = detailViewControllerSpy
     }
 
     // MARK: - Test doubles
@@ -56,13 +64,11 @@ class DetailPresenterTests: XCTestCase {
 
     func testPresentFetchImageMobileDataFailShouldReturnFail() {
         // Given
-        let detailViewControllerSpy = DetailViewControllerSpy()
-        sut.viewController = detailViewControllerSpy
-
-        // When
         let phone: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "rating", isFav: false, id: 1)
 
         let response = Detail.Something.Response(result: .failure(ErrorStoreData.noInternetConnection), mobile: phone)
+
+        // When
         sut.presentImg(response: response)
 
         // Then
@@ -78,16 +84,14 @@ class DetailPresenterTests: XCTestCase {
 
     func testPresentImageMobileDataFromApiShouldFormatDisplay() {
         // Given
-        let detailViewControllerSpy = DetailViewControllerSpy()
-        sut.viewController = detailViewControllerSpy
-
-        // When
         let imageA = ImageListMock.Image.imageA
         let imgs = [imageA]
 
         let phone: DisplayMobileList = DisplayMobileList(thumbImageURL: "url", brand: "brand", price: "price", description: "description", name: "name", rating: "rating", isFav: false, id: 1)
 
         let response = Detail.Something.Response(result: .success(imgs), mobile: phone)
+
+        // When
         sut.presentImg(response: response)
 
         // Then

@@ -15,15 +15,20 @@ class MobileListInteractorTests: XCTestCase {
     // MARK: - Subject under test
     
     var sut: MobileListInteractor!
+    var mobileListPresenterSpy: MobileListPresenterSpy!
+    var mobileListWorkerSpy: MobileListWorkerSpy!
     
     // MARK: - Test lifecycle
     
     override func setUp() {
         super.setUp()
         setupMobileListInteractor()
+        setupMobileListPresenterOutput()
+        setupWorker()
     }
     
     override func tearDown() {
+        sut = nil
         super.tearDown()
     }
     
@@ -31,6 +36,16 @@ class MobileListInteractorTests: XCTestCase {
     
     func setupMobileListInteractor() {
         sut = MobileListInteractor()
+    }
+    
+    func setupMobileListPresenterOutput() {
+        mobileListPresenterSpy = MobileListPresenterSpy()
+        sut.presenter = mobileListPresenterSpy
+    }
+    
+    func setupWorker() {
+        mobileListWorkerSpy = MobileListWorkerSpy(store: MobileListStoreMock())
+        sut.worker = mobileListWorkerSpy
     }
     
     // MARK: - Test doubles
@@ -75,28 +90,22 @@ class MobileListInteractorTests: XCTestCase {
             }
         }
     }
-
-
+    
+    
     
     // MARK: - Tests
-
+    
     func testMobileListApiShouldReturnData() {
         // Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
-
-
-        let mobileListWorkerSpy = MobileListWorkerSpy(store: MobileListStoreMock())
-        sut.worker = mobileListWorkerSpy
-
-        // When
         let request: MobileList.GetMobile.Request = MobileList.GetMobile.Request()
+        
+        // When
         sut.getMobileListApi(request: request)
-
+        
         // Then
         XCTAssertTrue(mobileListWorkerSpy.getMobileListCalled)
         XCTAssertTrue(mobileListPresenterSpy.presentDataFromApiCalled)
-
+        
         switch  mobileListPresenterSpy.mockModel.result {
         case .success(let data):
             XCTAssertEqual(data.count, 1)
@@ -105,26 +114,19 @@ class MobileListInteractorTests: XCTestCase {
             XCTFail()
         }
     }
-
+    
     func testMobileListApiShouldFail() {
         // Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
-
-
-        let mobileListWorkerSpy = MobileListWorkerSpy(store: MobileListStoreMock())
         mobileListWorkerSpy.fetchDataFail = true
-        sut.worker = mobileListWorkerSpy
-
-        // When
         let request: MobileList.GetMobile.Request = MobileList.GetMobile.Request()
+        
+        // When
         sut.getMobileListApi(request: request)
-
+        
         // Then
-
         XCTAssertTrue(mobileListWorkerSpy.getMobileListCalled)
         XCTAssertTrue(mobileListPresenterSpy.presentDataFromApiCalled)
-
+        
         switch  mobileListPresenterSpy.mockModel.result {
         case .failure(let error):
             XCTAssertEqual(error.localizedDescription, "The operation couldn’t be completed. (MobileGuideCleanTests.ErrorStoreData error 0.)")
@@ -132,218 +134,189 @@ class MobileListInteractorTests: XCTestCase {
             XCTFail()
         }
     }
-
+    
     func testFilterFavouriteData() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = [MobileListMock.Mobile.phoneA, MobileListMock.Mobile.phoneB]
-
-        //When
-
         let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
+        
+        //When
         sut.setFav(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
         XCTAssertNotNil(sut.favList)
         XCTAssertEqual(sut.favList.count, 1)
         XCTAssertEqual(sut.favList[0].id, 1)
-
+        
     }
-
+    
     func testFilterFavouriteDataMobileListIsNull() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
-
-        //When
-
         let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
+        
+        //When
         sut.setFav(request: request)
-
+        
         //Then
         XCTAssertFalse(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
-
+    
     func testFilterFavouriteDataIsFavouriteIsNull() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         var phoneA = MobileListMock.Mobile.phoneA
         phoneA.isFavourite = nil
         sut.mobileList = [phoneA]
-
-        //When
-
         let request: MobileList.FavId.Request = MobileList.FavId.Request(id: 1)
+        
+        //When
         sut.setFav(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
         XCTAssertNotNil(sut.favList)
         XCTAssertEqual(sut.favList[0].id, 1)
-
+        
     }
-
+    
     func testRemoveFavouriteDataFromFavouriteList() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = [MobileListMock.Mobile.phoneA]
-
-        //When
         let request : MobileList.rmId.Request = MobileList.rmId.Request(id: 1, isFav: false)
+        
+        //When
         sut.removeFav(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentRemoveCalled)
     }
-
+    
     func testRemoveFavouriteDataButDataToRemoveIsNull() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = [MobileListMock.Mobile.phoneC]
-
-        //When
         let request : MobileList.rmId.Request = MobileList.rmId.Request(id: 1, isFav: false)
+        
+        //When
         sut.removeFav(request: request)
-
+        
         //Then
         XCTAssertFalse(mobileListPresenterSpy.presentRemoveCalled)
-
+        
     }
-
-
-
-
+    
+    
+    
+    
     func testNoFavouriteAndUnsort() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .all, sortType: .isDefault)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
-
+    
     func testNoFavouriteAndSortPriceLowToHigh() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
         sut.favList = MobileListMock.Mobile.favList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .all, sortType: .priceLowToHigh)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
-
+    
     func testNoFavouriteAndSortPriceHighToLow() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
         sut.favList = MobileListMock.Mobile.favList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .all, sortType: .priceHighToLow)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
-
-
+    
+    
     func testNoFavouriteAndSortRating() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
         sut.favList = MobileListMock.Mobile.favList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .all, sortType: .rating)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
-
+        
+        
     }
-
+    
     func testFavouriteAndUnsort() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: .isDefault)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
-
+    
     func testFavouriteAndSortPriceLowToHigh() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
         sut.favList = MobileListMock.Mobile.favList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: .priceLowToHigh)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
-
+    
     func testFavouriteAndSortPriceHighToLow() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
         sut.favList = MobileListMock.Mobile.favList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: .priceHighToLow)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
-
+    
     func testFavouriteAndSortRating() {
         //Given
-        let mobileListPresenterSpy = MobileListPresenterSpy()
-        sut.presenter = mobileListPresenterSpy
         sut.mobileList = MobileListMock.Mobile.mobileList
         sut.favList = MobileListMock.Mobile.favList
-
-        //When
         let request : MobileList.FeatureMobile.Request = MobileList.FeatureMobile.Request(segmentState: .favourite, sortType: .rating)
+        
+        //When
         sut.check(request: request)
-
+        
         //Then
         XCTAssertTrue(mobileListPresenterSpy.presentFeatureCalled)
-
+        
     }
 }
